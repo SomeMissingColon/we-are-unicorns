@@ -29,6 +29,11 @@ class ProjectsController < ApplicationController
     redirect_to project_path(selected_project)
   end
 
+  def destroy
+    selected_project.destroy
+    redirect_to projects_path
+  end
+
   private
 
   def id

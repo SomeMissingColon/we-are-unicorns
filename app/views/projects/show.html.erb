@@ -1,5 +1,8 @@
 <% if current_user == @project.user %>
-  <%= link_to 'edit project', edit_project_path(@project) %>
+  <%= link_to 'edit', edit_project_path(@project) %>
+  |
+  <%= link_to 'delete', project_path(@project),
+      method: :delete %>
 <% end %>
 <h1><%= @project.name %></h1>
 <h3><%= @project.description %></h3>
