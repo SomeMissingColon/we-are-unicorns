@@ -1,0 +1,10 @@
+<h1>Find your next project?</h1>
+
+<div class="cards">
+  <% @projects.each do |project| %>
+  <div class="card">
+    <h3> <%= link_to project.name, project_path(project) %> </h3>
+    <p> <%= project.description %></p>
+  </div>
+  <% end %>
+</div>
