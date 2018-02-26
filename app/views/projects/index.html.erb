@@ -1,0 +1,20 @@
+<% unless user_signed_in? %>
+  <%= link_to 'login', new_user_session_path %>
+  |
+  <%= link_to 'sign up', new_user_registration_path %>
+<% else user_signed_in?  %>
+  <%= link_to 'sign out', destroy_user_session_path,
+      method: :delete %>
+  |
+  <%= link_to 'create new project', new_project_path %>
+<% end %>
+<h1>Find your next project?</h1>
+
+<div class="cards">
+  <% @projects.each do |project| %>
+  <div class="card">
+    <h3> <%= link_to project.name, project_path(project) %> </h3>
+    <p> <%= project.description %></p>
+  </div>
+  <% end %>
+</div>
