@@ -1,0 +1,17 @@
+<%= simple_form_for(@project) do |f| %>
+ <% if @project.errors.any? %>
+    <div class="error-container">
+      <ul>
+        <% @project.errors.full_message each do |message|  %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.input :user, :as => :hidden, :value => current_user  %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <%= f.submit 'ready!' %>
+<% end %>
