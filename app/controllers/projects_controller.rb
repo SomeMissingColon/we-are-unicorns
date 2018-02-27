@@ -51,6 +51,6 @@ class ProjectsController < ApplicationController
     Project.find(id)
   end
   def project_params
-    params.require(:project).permit(:name, :description, :photo)
+    params.require(:project).permit(:name, :description, :photo, :focus_area_id)
   end
 end
