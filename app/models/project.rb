@@ -1,5 +1,6 @@
 class Project < ApplicationRecord
   belongs_to :user
+  belongs_to :focus_area
   validates :name, presence: true
   validates :description, presence: true
   validates :user, presence: true
