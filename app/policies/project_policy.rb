@@ -24,6 +24,19 @@ class ProjectPolicy < ApplicationPolicy
   def show?
     true
   end
+
+  def search_page?
+    true
+  end
+
+  def search_results?
+    true
+  end
+
+  def show?
+    true
+  end
+
   private
 
   def user_is_owner?
