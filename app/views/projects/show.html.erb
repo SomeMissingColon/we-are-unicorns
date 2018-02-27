@@ -7,3 +7,11 @@
 <h1><%= @project.name %></h1>
 <h3><%= @project.description %></h3>
 <h4>This project is owned by <%= @project.user.email %></h4>
+<% if current_user != @project.user %>
+  <%= link_to 'donate', new_project_donation_path(@project) %>
+<%end %>
+<% if current_user == @project.user %>
+  <% @project.donations.each do |donation| %>
+  <h1><%= donation.user.email %> donated <%= donation.amount %>$, status <%= donation.status %></h1>
+  <% end %>
+<% end  %>
