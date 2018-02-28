@@ -13,16 +13,7 @@
 
     <%= render 'partials/navbar' %>
 
-  <% unless user_signed_in? %>
-  <%= link_to 'login', new_user_session_path %>
-  |
-  <%= link_to 'sign up', new_user_registration_path %>
-<% else user_signed_in?  %>
-  <%= link_to 'sign out', destroy_user_session_path,
-      method: :delete %>
-  |
-  <%= link_to 'create new project', new_project_path %>
-<% end %>
+
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
