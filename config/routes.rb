@@ -12,5 +12,4 @@ Rails.application.routes.draw do
   get '/user/donations', to: 'users#donations', as: :user_donations
   get '/search', :to => 'projects#search_results', :as => :search
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
