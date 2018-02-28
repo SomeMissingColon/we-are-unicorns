@@ -1,0 +1,77 @@
+
+<div class="navbar-wagon">
+  <!-- Logo -->
+  <%= link_to root_path, class: "navbar-wagon-brand" do %>
+  <%=cl_image_tag("Unicorn-Logo", height: 300) %>,
+  <% end %>
+
+  <% unless user_signed_in? %>
+  <%= link_to  new_user_registration_path, { class: "btn btn-sign-up-home" } do %>
+  Sign Up!
+  <% end %>
+
+  <% else user_signed_in?  %>
+  <div class="flexbox-class">
+    <form action="/search" method="get">
+      <input type="text" name="query" class = "search-field">
+      <input type="submit" value="Search for a Unicornz" class = "search-button" >
+    </form>
+  </div>
+
+  <% end %>
+
+  <!-- Right Navigation -->
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+    <!-- Links -->
+    <% unless user_signed_in? %>
+    <%= link_to  new_user_session_path, { class: "navbar-wagon-item navbar-wagon-link" } do %>
+    Login
+    <% end %>
+
+
+    <% else user_signed_in?  %>
+    <%= link_to user_project_path, { class: "navbar-wagon-item navbar-wagon-link" } do %>
+    My Projects
+    <% end %>
+    <%= link_to user_donations_path, { class: "navbar-wagon-item navbar-wagon-link" } do %>
+    My Donations
+    <% end %>
+
+    <!-- Avatar with dropdown menu -->
+    <div class="navbar-wagon-item">
+      <div class="dropdown">
+        <%= cl_image_tag(current_user.photo, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown") %>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <% if user_signed_in?  %>
+          <%= link_to 'My Profile', user_profile_path, class: "navbar-wagon-item navbar-wagon-link" %>
+          <br>
+          <%= link_to 'Create Project', new_project_path, class: "navbar-wagon-item navbar-wagon-link" %>
+          <br>
+          <%= link_to 'Sign Out', destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link", method: :delete %>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+  <!-- Dropdown list appearing on mobile only -->
+  <div class="navbar-wagon-item hidden-md hidden-lg">
+    <div class="dropdown">
+      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+        <% unless user_signed_in? %>
+        <%= link_to  new_user_session_path, { class: "navbar-wagon-item navbar-wagon-link" } do %>
+        Login
+        <% end %>
+        <% else user_signed_in?  %>
+        <%= link_to 'sign out', destroy_user_session_path,
+        method: :delete %>
+        |
+        <%= link_to 'create new project', new_project_path %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

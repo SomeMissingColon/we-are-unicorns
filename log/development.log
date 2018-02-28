@@ -1,0 +1,40 @@
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7169208935853914250)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7169208935853914250)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2018-02-28 16:56:58 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  Rendered pages/home.html.erb within layouts/application (24.2ms)
+Completed 401 Unauthorized in 34ms (ActiveRecord: 4.3ms)
+
+
+  
+ActionView::Template::Error (Must supply cloud_name in tag or in configuration):
+     6:   <div class="row">
+     7:     <% @projects.each do |project| %>
+     8:     <div class="col-xs-12 col-sm-4 grow">
+     9:       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= project.photo.file.nil? ? 'https://source.unsplash.com/random' : cl_image_path(project.photo, height: 300, width: 400, crop: :fill) %>)">
+    10:         <div class="card-category">Popular</div>
+    11:         <div class="card-description">
+    12:           <h2><%= project.name %></h2>
+  
+app/views/pages/home.html.erb:9:in `block in _app_views_pages_home_html_erb___1623525422343603995_47462226992060'
+app/views/pages/home.html.erb:7:in `_app_views_pages_home_html_erb___1623525422343603995_47462226992060'
+Started GET "/" for 127.0.0.1 at 2018-02-28 16:58:38 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  Rendered pages/home.html.erb within layouts/application (22.8ms)
+  Rendered partials/_navbar.html.erb (4.2ms)
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /home/thomas/code/SomeMissingColon/we-are-unicorns/public/packs
+Completed 200 OK in 5838ms (Views: 5826.0ms | ActiveRecord: 3.4ms)
+
+
