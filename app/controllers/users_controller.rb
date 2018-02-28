@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   def profile
     given_sum = 0
     @current_user.donations.map do |donation|
-      given_sum += donation.ammount
+      given_sum += donation.amount
     end
 
     @total_given_dollars = given_sum

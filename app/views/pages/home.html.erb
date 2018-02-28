@@ -1,2 +1,9 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>Welcome to we are marketplace</h1>
+<div class="cards">
+<% @projects.each do |project| %>
+  <h1><%= link_to project.name, project_path(project) %> </h1>
+  <br>
+  <br>
+  <p><%= project.description %></p>
+<% end %>
+</div>
