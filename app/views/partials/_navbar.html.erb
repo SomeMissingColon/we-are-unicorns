@@ -5,12 +5,12 @@
   <%=cl_image_tag("Unicorn-Logo", height: 300) %>,
   <% end %>
 
-<% unless user_signed_in? %>
-    <%= link_to  new_user_registration_path, { class: "btn btn-primary" } do %>
-    Sign Up!
-    <% end %>
+  <% unless user_signed_in? %>
+  <%= link_to  new_user_registration_path, { class: "btn btn-sign-up-home" } do %>
+  Sign Up!
+  <% end %>
 
-<% else user_signed_in?  %>
+  <% else user_signed_in?  %>
   <div class="flexbox-class">
     <form action="/search" method="get">
       <input type="text" name="query" class = "search-field">
@@ -44,12 +44,11 @@
         <%= cl_image_tag(current_user.photo, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown") %>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <% if user_signed_in?  %>
-          <%= link_to 'sign out', destroy_user_session_path,
-          method: :delete %>
+          <%= link_to 'My Profile', user_profile_path, class: "navbar-wagon-item navbar-wagon-link" %>
           <br>
-          <%= link_to 'create new project', new_project_path %>
+          <%= link_to 'Create Project', new_project_path, class: "navbar-wagon-item navbar-wagon-link" %>
           <br>
-          <%= link_to 'My Profile', user_profile_path %>
+          <%= link_to 'Sign Out', destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link", method: :delete %>
           <% end %>
         </ul>
       </div>
@@ -62,7 +61,11 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <% if user_signed_in?  %>
+        <% unless user_signed_in? %>
+        <%= link_to  new_user_session_path, { class: "navbar-wagon-item navbar-wagon-link" } do %>
+        Login
+        <% end %>
+        <% else user_signed_in?  %>
         <%= link_to 'sign out', destroy_user_session_path,
         method: :delete %>
         |
