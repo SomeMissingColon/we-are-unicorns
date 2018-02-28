@@ -2,10 +2,15 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-  <%= image_tag "Unicorn-Logo.ai", height: 50 %>
+  <%=cl_image_tag("Unicorn-Logo", height: 300) %>,
   <% end %>
 
+<% unless user_signed_in? %>
+    <%= link_to  new_user_registration_path, { class: "btn btn-primary" } do %>
+    Sign Up!
+    <% end %>
 
+<% else user_signed_in?  %>
   <div class="flexbox-class">
     <form action="/search" method="get">
       <input type="text" name="query" class = "search-field">
@@ -13,30 +18,43 @@
     </form>
   </div>
 
+  <% end %>
+
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <!-- Links -->
-    <%= link_to user_project_path, { class: "navbar-wagon-item navbar-wagon-link" } do %>My Projects
+    <% unless user_signed_in? %>
+    <%= link_to  new_user_session_path, { class: "navbar-wagon-item navbar-wagon-link" } do %>
+    Login
     <% end %>
-    <%= link_to user_donations_path, { class: "navbar-wagon-item navbar-wagon-link" } do %>My Donations
+
+
+    <% else user_signed_in?  %>
+    <%= link_to user_project_path, { class: "navbar-wagon-item navbar-wagon-link" } do %>
+    My Projects
+    <% end %>
+    <%= link_to user_donations_path, { class: "navbar-wagon-item navbar-wagon-link" } do %>
+    My Donations
     <% end %>
 
     <!-- Avatar with dropdown menu -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
-        <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <%= cl_image_tag(current_user.photo, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown") %>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-<% if user_signed_in?  %>
-  <%= link_to 'sign out', destroy_user_session_path,
-      method: :delete %>
-  |
-  <%= link_to 'create new project', new_project_path %>
-<% end %>
-          </li>
+          <% if user_signed_in?  %>
+          <%= link_to 'sign out', destroy_user_session_path,
+          method: :delete %>
+          <br>
+          <%= link_to 'create new project', new_project_path %>
+          <br>
+          <%= link_to 'My Profile', user_profile_path %>
+          <% end %>
         </ul>
       </div>
     </div>
+    <% end %>
   </div>
 
   <!-- Dropdown list appearing on mobile only -->
@@ -44,12 +62,12 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-<% if user_signed_in?  %>
-  <%= link_to 'sign out', destroy_user_session_path,
-      method: :delete %>
-  |
-  <%= link_to 'create new project', new_project_path %>
-<% end %>
+        <% if user_signed_in?  %>
+        <%= link_to 'sign out', destroy_user_session_path,
+        method: :delete %>
+        |
+        <%= link_to 'create new project', new_project_path %>
+        <% end %>
       </ul>
     </div>
   </div>
