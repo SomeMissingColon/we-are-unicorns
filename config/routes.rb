@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   end
   get '/user/projects', to: 'users#projects', as: :user_project
+  get 'user/profile', to: 'users#profile', as: :user_profile
   get '/user/donations', to: 'users#donations', as: :user_donations
   get '/search', :to => 'projects#search_results', :as => :search
 

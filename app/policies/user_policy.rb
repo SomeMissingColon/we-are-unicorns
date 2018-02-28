@@ -12,6 +12,14 @@ class UserPolicy < ApplicationPolicy
     logged_in?
   end
 
+  def profile?
+    logged_in?
+  end
+
+  def current_user_project?
+    logged_in?
+  end
+
   private
   def logged_in?
     !user.nil?
