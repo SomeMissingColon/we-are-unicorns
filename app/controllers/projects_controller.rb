@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
-   skip_before_action :authenticate_user!, only: [:index,:show]
+  skip_before_action :authenticate_user!, only: [:index,:show]
+
   def index
     @projects = policy_scope(Project)
   end
@@ -16,7 +17,6 @@ class ProjectsController < ApplicationController
   end
 
   def create
-
     new_project = Project.new(project_params)
     new_project.user = current_user
     authorize new_project
@@ -42,6 +42,24 @@ class ProjectsController < ApplicationController
     redirect_to projects_path
   end
 
+  def search_page
+  end
+
+  def search_results
+    authorize Project.first
+    if params[:query].present?
+      @search_projects_results = Project.all.select do |project|
+        if project.name.downcase.include?(params[:query].downcase)
+          project
+        end
+      end
+    elsif params[:query].nil?
+      render :search_page
+    elsif params[:query].blank?
+      @search_projects_results = []
+    end
+  end
+
   private
 
   def id
@@ -51,7 +69,8 @@ class ProjectsController < ApplicationController
   def selected_project
     Project.find(id)
   end
+
   def project_params
-    params.require(:project).permit(:name,:description)
+    params.require(:project).permit(:name, :description, :photo, :focus_area_id)
   end
 end

@@ -1,0 +1,14 @@
+<%= simple_form_for([project, donation]) do |f| %>
+<% if donation.errors.any? %>
+<div class="error-container">
+  <ul>
+    <% donation.errors.full_message each do |message|  %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+  <%= f.label 'donation status' %>
+  <%= f.select :status, ['pending','decline','accept'] %>
+  <%= f.submit 'submit' %>
+<% end %>

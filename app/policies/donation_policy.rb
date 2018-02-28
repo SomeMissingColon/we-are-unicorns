@@ -5,12 +5,20 @@ class DonationPolicy < ApplicationPolicy
     end
   end
 
+  def update?
+    !user_is_not_owner?
+  end
+
   def new?
     user_is_not_owner?
   end
 
   def create?
     user_is_not_owner?
+  end
+
+  def accept?
+    !user_is_not_owner
   end
 
   private
