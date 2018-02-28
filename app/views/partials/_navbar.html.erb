@@ -9,7 +9,7 @@
   <div class="flexbox-class">
     <form action="/search" method="get">
       <input type="text" name="query" class = "search-field">
-      <input type="submit" value="Search Cocktailz" class = "search-button" >
+      <input type="submit" value="Search for a Unicornz" class = "search-button" >
     </form>
   </div>
 
@@ -17,23 +17,22 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <!-- Links -->
-    <%= link_to "Projects", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-     <%= link_to "Donations", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to user_project_path, { class: "navbar-wagon-item navbar-wagon-link" } do %>My Projects
+    <% end %>
+    <%= link_to user_donations_path, { class: "navbar-wagon-item navbar-wagon-link" } do %>My Donations
+    <% end %>
 
     <!-- Avatar with dropdown menu -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
         <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li>
-            <%= link_to "#" do %>
-            <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to "#" do %>
-            <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
-            <% end %>
+<% if user_signed_in?  %>
+  <%= link_to 'sign out', destroy_user_session_path,
+      method: :delete %>
+  |
+  <%= link_to 'create new project', new_project_path %>
+<% end %>
           </li>
         </ul>
       </div>
@@ -45,9 +44,12 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
+<% if user_signed_in?  %>
+  <%= link_to 'sign out', destroy_user_session_path,
+      method: :delete %>
+  |
+  <%= link_to 'create new project', new_project_path %>
+<% end %>
       </ul>
     </div>
   </div>

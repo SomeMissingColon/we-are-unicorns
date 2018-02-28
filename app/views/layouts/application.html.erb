@@ -13,7 +13,7 @@
 
     <%= render 'partials/navbar' %>
 
-    <% unless user_signed_in? %>
+  <% unless user_signed_in? %>
   <%= link_to 'login', new_user_session_path %>
   |
   <%= link_to 'sign up', new_user_registration_path %>
