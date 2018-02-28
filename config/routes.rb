@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'users/projects'
 
   devise_for :users
-  root to: 'pages#hom'
+  root to: 'pages#home'
   resources :projects do
     resources :donations, only:[:new,:create,:edit,:update]
 

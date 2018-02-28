@@ -13,7 +13,8 @@
 
 <h2> Donation received </h2>
 <% current_user.projects.each do |project| %>
-  <h3>donation for <%= link_to project.name %></h3>
+  <% unless project.donations.count.zero? %>
+  <h3>donation for <%= link_to project.name, project_path(project) %></h3>
   <% project.donations.each do |donation| %>
 
   <h3>amount: <%= donation.amount %>$</h3>
@@ -24,7 +25,7 @@
      <h3>donation status: <%= donation.status %></h3>
     <% end %>
     <br>
+    <% end %>
   <% end %>
 <% end %>
 
-user.projects.map{|p| p.donation}.each
