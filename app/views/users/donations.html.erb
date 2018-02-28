@@ -1,0 +1,20 @@
+<h1>Donation menu</h1>
+<br>
+<h2>Sent donations</h2>
+<% current_user.donations.each do |donation| %>
+  <br>
+  <br>
+  <h3>donation for: <%= link_to donation.project.name, project_path(donation.projects) %></h3>
+  <h3>ammount offered: <%= donation.amount %></h3>
+  <h3>status: <%= donation.status %></h3>
+  <br>
+<% end %>
+
+<h2> Donation received </h2>
+<% current_user.projects.each do |project| %>
+  <% project.donations.each do |donation| %>
+    <% if donation.status == 'pending' %>
+
+    <% end %>
+  <% end %>
+<% end %>
