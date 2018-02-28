@@ -1,6 +1,5 @@
 /* Main navbar */
 .navbar-wagon {
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   background: white;
   transition: all 0.3s ease;
   height: 70px;
@@ -37,7 +36,7 @@
 
 /* Navbar link */
 .navbar-wagon-link {
-  color: #616668;
+  color: #BF00FF;
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
@@ -63,6 +62,7 @@
   background: transparent !important;
   color: black !important;
 }
+
 .navbar-wagon-dropdown-menu:before {
   content: ' ';
   height: 10px;
@@ -75,3 +75,33 @@
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
+
+.search-field {
+  border: 0;
+  border-bottom: 1px solid #BF00FF;
+}
+
+.search-button {
+  color: #BF00FF;
+  background: transparent;
+  border:0;
+  border-bottom: 1px solid #BF00FF;
+  height: 29px;
+  // border-radius: 3px;
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.flexbox-class {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  .form-group {
+    width: 100%;
+  }
+  .btn-primary {
+    margin-bottom: 16px
+  }
+}
+

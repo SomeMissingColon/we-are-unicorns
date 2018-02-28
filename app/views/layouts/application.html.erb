@@ -10,7 +10,10 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <% unless user_signed_in? %>
+
+    <%= render 'partials/navbar' %>
+
+  <% unless user_signed_in? %>
   <%= link_to 'login', new_user_session_path %>
   |
   <%= link_to 'sign up', new_user_registration_path %>
