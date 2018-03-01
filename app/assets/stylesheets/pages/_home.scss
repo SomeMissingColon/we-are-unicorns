@@ -2,3 +2,37 @@
   color: #BF00FF;
   text-align: center;
 }
+
+
+.intro-header {
+  text-align: center;
+  color: #f8f8f8;
+  background: #000;
+  background-size: cover;
+  font-family: Lato;
+}
+
+.overlay {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.search-box-home {
+  background-color: white;
+  border: none;
+  color: black;
+  border-radius: 20px;
+}
+
+.search-home-button{
+  background: none;
+  border: none;
+}
