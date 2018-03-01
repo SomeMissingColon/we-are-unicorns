@@ -1,0 +1,32 @@
+
+
+.donation-card {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 80px;
+    margin-right: 80px;
+    padding: 15px;
+    background-color: white;
+}
+
+.donation-card-name {
+  font-size: 24px;
+}
+.donation-card-amount {
+  padding-left: 5px;
+}
+.donation-card-status {
+  padding-left: 5px;
+}
+
+
+.project-donation-row {
+    margin-left: 80px;
+    margin-right: 80px;
+    padding: 15px;
+    background-color: white;
+}
+
+.project-donation-row {
+  margin-bottom: 5px;
+}

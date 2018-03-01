@@ -29,20 +29,23 @@
 
 <div class="container">
   <div class="row">
+    <h4>Featured Projects</h4>
     <% @projects.each do |project| %>
     <div class="col-xs-12 col-sm-4">
       <div class="card">
         <a class="cover-link" href="/"></a>
         <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= project.photo.file.nil? ? 'https://source.unsplash.com/random' : cl_image_path(project.photo, height: 300, width: 400, crop: :fill) %>)">
           <%= link_to(new_project_donation_path(project)) do %>
-            <button type="button" class="btn btn-donate grow"> Donate
-            </button>
+          <button type="button" class="btn btn-donate grow"> Donate
+          </button>
           <% end %>
         </div>
         <div class="card-content">
-          <p class="content-ngo-name">NGO</p>
           <p class="content-project"> <%= project.name.capitalize %></p>
-          <p class="content-category"><%= project.focus_area.name %></p>
+          <div class="card-container">
+            <p class="content-category"><%= project.focus_area.name %></p>
+            <p class="content-ngo-name">NGO</p>
+          </div>
         </div>
         <%= link_to(project) do %>
         <div class="card-link"></div>

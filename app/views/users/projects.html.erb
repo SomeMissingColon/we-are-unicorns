@@ -7,12 +7,14 @@
         <a class="cover-link" href="/"></a>
         <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= project.photo.file.nil? ? 'https://source.unsplash.com/random' : cl_image_path(project.photo, height: 300, width: 400, crop: :fill) %>)">
           <div class="btn btn-donate"> $<%= project.received_donations %> received
-            </div>
+          </div>
         </div>
         <div class="card-content">
-          <p class="content-ngo-name">NGO</p>
           <p class="content-project"> <%= project.name.capitalize %></p>
-          <p class="content-category"><%= project.focus_area.name %></p>
+          <div class="card-container">
+            <p class="content-category"><%= project.focus_area.name %></p>
+            <p class="content-ngo-name">NGO</p>
+          </div>
         </div>
         <%= link_to(project) do %>
         <div class="card-link"></div>
@@ -38,9 +40,11 @@
             </div>
           </div>
           <div class="card-content">
-            <p class="content-ngo-name">NGO</p>
             <p class="content-project"> <%= donation.project.name.capitalize %></p>
-            <p class="content-category"><%= donation.project.focus_area.name %></p>
+            <div class="card-container">
+              <p class="content-category"><%= donation.project.focus_area.name %></p>
+              <p class="content-ngo-name">NGO</p>
+            </div>
           </div>
           <%= link_to(project_path(donation.project)) do %>
           <div class="card-link"></div>

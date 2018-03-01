@@ -1,30 +1,35 @@
-<h1>Donation menu</h1>
+<h3>Donation menu</h3>
 <br>
-<h2>Sent donations</h2>
+<h4>Sent donations</h4>
 <% current_user.donations.each do |donation| %>
-  <br>
-  <br>
-  <h3>donation for: <%= link_to donation.project.name, project_path(donation.project) %></h3>
-  <h3>ammount offered: <%= donation.amount %></h3>
-  <h3>status: <%= donation.status %></h3>
-  <br>
+<div class="container-donation">
+  <div class="donation-card">
+    <div class="donation-card-name" ><%= donation.project.name.capitalize %></div>
+    <div class="donation-card-amount" >Amount offered: <%= donation.amount %></div>
+    <div class="donation-card-status" >Status: <%= donation.status %></div>
+  </div>
+</div>
 <% end %>
 
 
-<h2> Donation received </h2>
+
+<h4> Donation received </h4>
 <% current_user.projects.each do |project| %>
-  <% unless project.donations.count.zero? %>
-  <h3>donation for <%= link_to project.name, project_path(project) %></h3>
-  <% project.donations.each do |donation| %>
-
-  <h3>amount: <%= donation.amount %>$</h3>
-    <% if donation.status == 'pending' %>
-
-      <%= render partial: 'donations/donation-status-form', locals: {project: donation.project, donation: donation} %>
-    <% else %>
-     <h3>donation status: <%= donation.status %></h3>
+<% unless project.donations.count.zero? %>
+<div class="container-donation">
+  <div class="project-donation-row">
+    <div class="donation-card-name" ><%= project.name.capitalize %></div>
+    <% project.donations.each do |donation| %>
+    <div class="donation-received-details">
+      <div class="donation-card-amount" >Amount offered: <%= donation.amount %></div>
+      <% if donation.status == 'pending' %>
+      <div class="donation-card-status"> <%= render partial: 'donations/donation-status-form', locals: {project: donation.project, donation: donation} %> </div>
+      <% else %>
+      <div class="donation-card-status" >Status: <%= donation.status %></div>
+      <% end %>
+    </div>
     <% end %>
-    <br>
     <% end %>
-  <% end %>
+  </div>
+</div>
 <% end %>
