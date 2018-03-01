@@ -6,6 +6,8 @@
       <div class="card">
         <a class="cover-link" href="/"></a>
         <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= project.photo.file.nil? ? 'https://source.unsplash.com/random' : cl_image_path(project.photo, height: 300, width: 400, crop: :fill) %>)">
+          <div class="btn btn-donate"> $<%= project.received_donations %> received
+            </div>
         </div>
         <div class="card-content">
           <p class="content-ngo-name">NGO</p>
