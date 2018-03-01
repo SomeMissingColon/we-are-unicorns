@@ -7,6 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 /* Logo */
@@ -93,21 +94,30 @@
   }
 }
 
-.flexbox-class {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  .form-group {
-    width: 100%;
-  }
-  .btn-primary {
-    margin-bottom: 16px
-  }
+.container-search-navbar {
+  position: absolute;
+  left: 42%;
 }
 
 .btn-sign-up-home {
   color: white;
-background-color: #BF00FF;
-border-radius: 30px;
+  background-color: #BF00FF;
+  border-radius: 30px;
+}
+
+.search-box-not-root {
+  background-color: white;
+  border: 1px solid #BF00FF;
+  color: black;
+  border-radius: 20px;
+}
+
+.search-button-not-root {
+  background: none;
+  border: none;
+}
+
+.purple-fas {
+  color: #BF00FF;
 }
 

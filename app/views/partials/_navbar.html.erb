@@ -11,12 +11,16 @@
   <% end %>
 
   <% else user_signed_in?  %>
-  <div class="flexbox-class">
+  <% unless current_page?(root_path) %>
+  <div class="container-search-navbar">
     <form action="/search" method="get">
-      <input type="text" name="query" class = "search-field">
-      <input type="submit" value="Search for a Unicornz" class = "search-button" >
+      <input type="text" name="query" class = "search-box-not-root">
+      <button type="submit" class = "search-button-not-root" >
+        <i class="fas fa-search purple-fas"></i>
+      </button>
     </form>
   </div>
+  <% end %>
 
   <% end %>
 
