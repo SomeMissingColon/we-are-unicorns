@@ -1,17 +1,18 @@
-<h1> projects </h1>
-
 <h2>Your projects</h2>
 <div class="container">
   <div class="row">
     <% @current_user.projects.each do |project| %>
-    <div class="col-xs-12 col-sm-4 grow">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= project.photo.file.nil? ? 'https://source.unsplash.com/random' : cl_image_path(project.photo, height: 300, width: 400, crop: :fill) %>)">
-        <div class="card-category">Popular</div>
-        <div class="card-description">
-          <h2><%= project.name %></h2>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card">
+        <a class="cover-link" href="/"></a>
+        <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= project.photo.file.nil? ? 'https://source.unsplash.com/random' : cl_image_path(project.photo, height: 300, width: 400, crop: :fill) %>)">
+          <div class="btn btn-donate"> $<%= project.received_donations %> received
+            </div>
         </div>
-        <div class="fa-buttons">
-          <%= link_to '<i class="fas fas-clickable fa-trash hvr-grow-rotate"></i>'.html_safe, project, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <div class="card-content">
+          <p class="content-ngo-name">NGO</p>
+          <p class="content-project"> <%= project.name.capitalize %></p>
+          <p class="content-category"><%= project.focus_area.name %></p>
         </div>
         <%= link_to(project) do %>
         <div class="card-link"></div>
@@ -23,12 +24,31 @@
 </div>
 
 <h2>Projects you successfuly donated to</h2>
-<% current_user.donations.each do |donation| %>
-  <% if donation.status == 'accept' %>
-  <div class="card"></div>
-  <h3><%= link_to donation.project.name, project_path(donation.project) %></h3>
-  <br>
-  <p><%= donation.project.description %></p>
-  <br>
-  <% end %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <% current_user.donations.each do |donation| %>
+    <% if donation.status == 'accept' %>
+    <div class="card">
+      <div class="col-xs-12 col-sm-4">
+        <div class="card">
+          <a class="cover-link" href="/"></a>
+          <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= donation.project.photo.file.nil? ? 'https://source.unsplash.com/random' : cl_image_path(donation.project.photo, height: 300, width: 400, crop: :fill) %>)">
+
+            <div class="btn btn-donate"> $<%= donation.amount %> donated
+            </div>
+          </div>
+          <div class="card-content">
+            <p class="content-ngo-name">NGO</p>
+            <p class="content-project"> <%= donation.project.name.capitalize %></p>
+            <p class="content-category"><%= donation.project.focus_area.name %></p>
+          </div>
+          <%= link_to(project_path(donation.project)) do %>
+          <div class="card-link"></div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
+</div>
