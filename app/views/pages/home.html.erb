@@ -1,11 +1,31 @@
-<div class="container">
 
 
-<div class="home-title">
-<h1>Welcome to UNICORNZ</h1>
+<div class="intro-header" style ="background-image:url('https://picsum.photos/1200/800/?random/?gravity=center/')">
+  <div class="overlay">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <% unless user_signed_in? %>
+            <div class="home-title">
+              <h1>Welcome to UNICORNZ</h1>
+              <h3>Where you can give and take</h3>
+            </div>
+
+          <% else user_signed_in?  %>
+          <div class="container">
+            <form action="/search" method="get">
+              <input type="text" name="query" class = "search-box-home">
+              <button type="submit" class = "search-home-button" >
+                    <i class="fas fa-search"></i></i>
+                </button>
+            </form>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
-
 
 
 <div class="container">
