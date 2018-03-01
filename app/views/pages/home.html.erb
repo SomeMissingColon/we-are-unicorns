@@ -35,9 +35,11 @@
       <div class="card">
         <a class="cover-link" href="/"></a>
         <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= project.photo.file.nil? ? 'https://source.unsplash.com/random' : cl_image_path(project.photo, height: 300, width: 400, crop: :fill) %>)">
+          <% unless current_user == project.user %>
           <%= link_to(new_project_donation_path(project)) do %>
           <button type="button" class="btn btn-donate grow"> Donate
           </button>
+          <% end %>
           <% end %>
         </div>
         <div class="card-content">

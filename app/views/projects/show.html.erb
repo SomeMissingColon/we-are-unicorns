@@ -3,10 +3,32 @@
   <div class="banner-project-name">
     <h1><%= @project.name.capitalize %></h1>
   </div>
-  <div class="">
-    <button type="button" class="btn project-banner-button"> Donate </button>
+  <% unless current_user == @project.user %>
+  <%= link_to(new_project_donation_path(@project)) do %>
+         <button type="button" class="btn project-banner-button"> Donate
+         </button>
+         <% end %>
+         <% end %>
+
+  <div class="amounts">
+    <div class="given">
+      <div>Amount Given</div>
+      <div></div>
+    </div>
+    <div class="total">
+      <div>Total Funding</div>
+      <div><%= @project.received_donations %></div>
+    </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
 
 
 <% if current_user == @project.user %>
