@@ -1,3 +1,14 @@
+
+<div class="banner-project-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= @project.photo.file.nil? ? 'https://source.unsplash.com/random' : cl_image_path(@project.photo, height: 300, width: 400, crop: :fill) %>)">
+  <div class="banner-project-name">
+    <h1><%= @project.name.capitalize %></h1>
+  </div>
+  <div class="">
+    <button type="button" class="btn project-banner-button"> Donate </button>
+  </div>
+</div>
+
+
 <% if current_user == @project.user %>
   <%= link_to 'edit', edit_project_path(@project) %>
   |
@@ -30,5 +41,4 @@
 <% end  %>
 
 
-<%= cl_image_tag @project.photo, height: 300, width: 400, crop: :fill %>
 
