@@ -51,7 +51,7 @@
 .given {
   padding: 10px;
   padding-right: 10px;
-  border-right: black solid 1px;
+  border-right: $purple solid 1px;
   text-align: center;
 }
 
@@ -68,8 +68,8 @@
 
 .project-description {
   padding: 50px;
-  border-top: black solid 1px;
-  border-bottom: black solid 1px;
+  border-top: $purple solid 1px;
+  border-bottom: $purple solid 1px;
 }
 
 .social-links {

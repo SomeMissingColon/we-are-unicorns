@@ -2,7 +2,7 @@
 
 <div class="intro-header" style ="background-image:url('https://picsum.photos/1200/800/?random/?gravity=center/')">
   <div class="overlay">
-    <div class="container">
+    <div class="container-front-image">
       <div class="row">
         <div class="col-lg-12">
           <% unless user_signed_in? %>
@@ -12,7 +12,7 @@
           </div>
 
           <% else user_signed_in?  %>
-          <div class="container">
+          <div class="container-front-search">
             <form action="/search" method="get">
               <input type="text" name="query" class = "search-box-home">
               <button type="submit" class = "search-home-button" >
