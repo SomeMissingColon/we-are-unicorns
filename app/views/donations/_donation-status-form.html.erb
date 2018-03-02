@@ -1,4 +1,4 @@
-<%= simple_form_for([project, donation]) do |f| %>
+<%= simple_form_for([project, donation], remote: true) do |f| %>
 <% if donation.errors.any? %>
 <div class="error-container">
   <ul>

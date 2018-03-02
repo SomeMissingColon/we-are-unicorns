@@ -20,11 +20,11 @@ class DonationsController < ApplicationController
   end
 
   def update
+    @donation = donation
     authorize donation
     new_status = params.require(:donation).permit(:status)[:status]
     donation.update!(status: new_status)
 
-    redirect_to project_path(project)
   end
 
   private
