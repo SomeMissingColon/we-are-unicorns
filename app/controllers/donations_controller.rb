@@ -21,9 +21,10 @@ class DonationsController < ApplicationController
 
   def update
     @donation = donation
+
     authorize donation
-    new_status = params.require(:donation).permit(:status)[:status]
-    donation.update!(status: new_status)
+    @new_status = params.require(:donation).permit(:status)[:status]
+    donation.update!(status: @new_status)
 
   end
 
