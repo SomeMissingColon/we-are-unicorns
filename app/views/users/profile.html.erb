@@ -1,6 +1,25 @@
-<h1>Donation menu</h1>
-<br>
-<h2>Sent donations</h2>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://www.cnbinggui.net/data_images/wallpapers/4/338216-background-image.jpg');">
+   <div class="banner-content">
+     <h1>NGO Profile</h1>
+   </div>
+ </div>
 
-<p><%= @total_given_dollars %>$ to <%= @total_given_project %> projects</p>
+
+ <div class="container-prof">
+   <div class="first">
+     <h2>Donation Received</h1>
+       <p>Your <%= @total_created_project %> projects have received <%= @total_received_dollars %> $ in total</p>
+   </div>
+   <div class="second">
+     <h2>Donation Given</h1>
+       <p><%= @total_given_dollars %>$ to <%= @total_given_project %> projects</p>
+   </div>
+   <div class="third">
+     <h2>Project Created</h1>
+      <%= @total_created_project %>
+   </div>
+ </div>
+
+<!-- <p><%= @total_given_dollars %>$ to <%= @total_given_project %> projects</p>
 <p>Your <%= @total_created_project %> projects have received <%= @total_received_dollars %> $ in total</p>
+ -->
