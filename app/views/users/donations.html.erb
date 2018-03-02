@@ -25,7 +25,7 @@
     <%end %>
         <div class="donation-card-amount" >Amount offered: <%= donation.amount %></div>
         <% if donation.status == 'pending' %>
-        <div class="donation-card-status"> <%= render partial: 'donations/donation-status-form', locals: {project: donation.project, donation: donation} %> </div>
+        <div class="donation-card-status" donation-status-form-id="<%= donation.id %>"> <%= render partial: 'donations/donation-status-form', locals: {project: donation.project, donation: donation} %> </div>
         <% else %>
         <div class="donation-card-status" >Status: <%= donation.status %></div>
         <% end %>

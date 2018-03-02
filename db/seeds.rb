@@ -62,42 +62,42 @@ project1 = { name:'free the ducks',
            user: user1,
            focus_area_id: 1,
            remote_photo_url: 'https://res.cloudinary.com/dwikboy8/image/upload/t_media_lib_thumb/v1519833062/free-stuff.jpg' }
-
+photo_url = "http://res.cloudinary.com/dwikboy8/image/upload/v1520009740/xuav2d8y134tgdc8homv.jpg"
 project2 = { name:'free the rocks',
 description:'free em up',
 user: user1,
 focus_area_id: 2,
-remote_photo_url: 'https://res.cloudinary.com/dwikboy8/image/upload/t_media_lib_thumb/v1519833062/free-stuff.jpg' }
+remote_photo_url: 'http://res.cloudinary.com/dwikboy8/image/upload/v1520009740/xuav2d8y134tgdc8homv.jpg' }
 
 project3 = { name:'free the nips',
 description:'free em up',
 user: user1,
 focus_area_id: 3,
-remote_photo_url: 'https://res.cloudinary.com/dwikboy8/image/upload/t_media_lib_thumb/v1519833062/free-stuff.jpg' }
+remote_photo_url: 'http://res.cloudinary.com/dwikboy8/image/upload/v1520009740/xuav2d8y134tgdc8homv.jpg' }
 
 project4 = { name:'free the tips',
 description:'free em up',
 user: user1,
 focus_area_id: 4,
-remote_photo_url: 'https://res.cloudinary.com/dwikboy8/image/upload/t_media_lib_thumb/v1519833062/free-stuff.jpg' }
+remote_photo_url: 'http://res.cloudinary.com/dwikboy8/image/upload/v1520009740/xuav2d8y134tgdc8homv.jpg' }
 
 project5 = { name:'free the creeps',
 description:'free em up',
 user: user2,
 focus_area_id: 5,
-remote_photo_url: 'https://res.cloudinary.com/dwikboy8/image/upload/t_media_lib_thumb/v1519833062/free-stuff.jpg' }
+remote_photo_url: 'http://res.cloudinary.com/dwikboy8/image/upload/v1520009740/xuav2d8y134tgdc8homv.jpg' }
 
 project6 = { name:'free the flips',
 description:'free em up',
 user: user2,
 focus_area_id: 6,
-remote_photo_url: 'https://res.cloudinary.com/dwikboy8/image/upload/t_media_lib_thumb/v1519833062/free-stuff.jpg' }
+remote_photo_url: 'http://res.cloudinary.com/dwikboy8/image/upload/v1520009740/xuav2d8y134tgdc8homv.jpg' }
 
 project7 = { name:'free the drips',
 description:'free em up',
 user: user2,
 focus_area_id: 7,
-remote_photo_url: 'https://res.cloudinary.com/dwikboy8/image/upload/t_media_lib_thumb/v1519833062/free-stuff.jpg' }
+remote_photo_url: 'http://res.cloudinary.com/dwikboy8/image/upload/v1520009740/xuav2d8y134tgdc8homv.jpg' }
 
 puts "creating projects"
 project1 = Project.new(project1)
