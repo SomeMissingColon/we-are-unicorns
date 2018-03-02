@@ -2958,3 +2958,1553 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 80ms (Views: 77.3ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/projects/5" for 127.0.0.1 at 2018-03-02 12:16:25 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mFocusArea Load (0.5ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered projects/show.html.erb within layouts/application (63.8ms)
+  Rendered partials/_navbar.html.erb (2.4ms)
+  Rendered partials/_footer.html.erb (0.3ms)
+Completed 200 OK in 1549ms (Views: 1469.6ms | ActiveRecord: 17.1ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-03-02 12:16:35 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XNQEuO8kE/PPMEVyPbE8wCo7d7FzmDgjPpGicHoER5AmhvrAf14OdcdoNuE4YWFqt+vvUAFa/XQeelz3KOd93Q==", "user"=>{"email"=>"user1@user1.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "user1@user1.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "current_sign_in_ip" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["current_sign_in_at", "2018-03-02 17:16:36.107027"], ["last_sign_in_at", "2018-03-02 17:16:36.107027"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1], ["updated_at", "2018-03-02 17:16:36.108233"], ["id", 1]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 149ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-02 12:16:36 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.3ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.3ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.3ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.2ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.3ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.2ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.2ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered pages/home.html.erb within layouts/application (18.9ms)
+  Rendered partials/_navbar.html.erb (2.1ms)
+  Rendered partials/_footer.html.erb (0.2ms)
+Completed 200 OK in 41ms (Views: 36.8ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/projects/5/donations/new" for 127.0.0.1 at 2018-03-02 12:17:06 -0500
+Processing by DonationsController#new as HTML
+  Parameters: {"project_id"=>"5"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-03-02 12:17:06 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (45.6ms)
+  Rendered partials/_navbar.html.erb (2.7ms)
+  Rendered partials/_footer.html.erb (0.4ms)
+Completed 200 OK in 81ms (Views: 78.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-03-02 12:17:12 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WLHP9pUJ2uGeqwCXKwZTG2zLoPmkrxCjjR1yvePCAGxfg0mfTdgYf+iInsZXqSzw7XzUGjKq4v36mC7p7XTelQ==", "user"=>{"email"=>"user2@user2.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "user2@user2.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "current_sign_in_ip" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["current_sign_in_at", "2018-03-02 17:17:12.441631"], ["last_sign_in_at", "2018-03-02 17:17:12.441631"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1], ["updated_at", "2018-03-02 17:17:12.443067"], ["id", 2]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects/5/donations/new
+Completed 302 Found in 239ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/projects/5/donations/new" for 127.0.0.1 at 2018-03-02 12:17:12 -0500
+Processing by DonationsController#new as HTML
+  Parameters: {"project_id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 401 Unauthorized in 20ms (ActiveRecord: 3.0ms)
+
+
+  
+Pundit::NotAuthorizedError (not allowed to new? this #<Donation id: nil, project_id: 5, user_id: nil, status: "pending", amount: nil, created_at: nil, updated_at: nil>):
+  
+app/controllers/donations_controller.rb:7:in `new'
+Started GET "/projects/5/donations/new" for 127.0.0.1 at 2018-03-02 12:17:14 -0500
+Processing by DonationsController#new as HTML
+  Parameters: {"project_id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 401 Unauthorized in 6ms (ActiveRecord: 1.2ms)
+
+
+  
+Pundit::NotAuthorizedError (not allowed to new? this #<Donation id: nil, project_id: 5, user_id: nil, status: "pending", amount: nil, created_at: nil, updated_at: nil>):
+  
+app/controllers/donations_controller.rb:7:in `new'
+Started GET "/projects/5/" for 127.0.0.1 at 2018-03-02 12:17:18 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mFocusArea Load (0.4ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered projects/show.html.erb within layouts/application (8.3ms)
+  Rendered partials/_navbar.html.erb (3.1ms)
+  Rendered partials/_footer.html.erb (0.3ms)
+Completed 200 OK in 46ms (Views: 40.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-02 12:17:23 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.4ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.2ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.3ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.3ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.2ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.3ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.3ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered pages/home.html.erb within layouts/application (28.2ms)
+  Rendered partials/_navbar.html.erb (3.1ms)
+  Rendered partials/_footer.html.erb (0.3ms)
+Completed 200 OK in 64ms (Views: 59.5ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2018-03-02 12:17:25 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mFocusArea Load (0.2ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  Rendered projects/show.html.erb within layouts/application (4.0ms)
+  Rendered partials/_navbar.html.erb (2.5ms)
+  Rendered partials/_footer.html.erb (0.2ms)
+Completed 200 OK in 29ms (Views: 24.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/projects/1/donations/new" for 127.0.0.1 at 2018-03-02 12:17:27 -0500
+Processing by DonationsController#new as HTML
+  Parameters: {"project_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/_form.html.erb (2.7ms)
+  Rendered donations/new.html.erb within layouts/application (3.9ms)
+  Rendered partials/_navbar.html.erb (3.3ms)
+  Rendered partials/_footer.html.erb (0.4ms)
+Completed 200 OK in 45ms (Views: 38.7ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/projects/1/donations" for 127.0.0.1 at 2018-03-02 12:17:31 -0500
+Processing by DonationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CoL85yR67dFcfO7alez5+wv1xr/BYZND1eAO7WRJB/A2BTi/qrI0N3T72tde/7A7FhwoKCDGcPnCTqGyrb/v7A==", "donation"=>{"amount"=>"123123"}, "commit"=>"gibe", "project_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "donations" ("project_id", "user_id", "amount", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["project_id", 1], ["user_id", 2], ["amount", 123123], ["created_at", "2018-03-02 17:17:31.821363"], ["updated_at", "2018-03-02 17:17:31.821363"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/projects/1
+Completed 302 Found in 12ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2018-03-02 12:17:31 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mFocusArea Load (0.4ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  Rendered projects/show.html.erb within layouts/application (7.3ms)
+  Rendered partials/_navbar.html.erb (3.1ms)
+  Rendered partials/_footer.html.erb (0.4ms)
+Completed 200 OK in 45ms (Views: 39.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2018-03-02 12:17:34 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mFocusArea Load (0.3ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered donations/_donation-status-form.html.erb (3.1ms)
+  Rendered projects/show.html.erb within layouts/application (15.5ms)
+  Rendered partials/_navbar.html.erb (3.3ms)
+  Rendered partials/_footer.html.erb (0.4ms)
+Completed 200 OK in 55ms (Views: 49.7ms | ActiveRecord: 2.2ms)
+
+
+Started PATCH "/projects/1/donations/1" for 127.0.0.1 at 2018-03-02 12:17:43 -0500
+Processing by DonationsController#update as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"J2iR2+OQGcP5gZtPe4e8i9horPwytDLAOT0Y0mIxYsw2j1wX0Fj7dtgL+EwYdiiqFp10dyk/Kw0GxW3q7jJosg==", "donation"=>{"status"=>"accept"}, "commit"=>"submit", "project_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "donations" SET "status" = $1, "updated_at" = $2 WHERE "donations"."id" = $3[0m  [["status", "accept"], ["updated_at", "2018-03-02 17:17:43.773689"], ["id", 1]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering donations/update.js.erb
+  Rendered donations/update.js.erb (0.4ms)
+Completed 200 OK in 23ms (Views: 5.0ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/user/donations" for 127.0.0.1 at 2018-03-02 12:17:47 -0500
+Processing by UsersController#donations as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/donations.html.erb within layouts/application
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered users/donations.html.erb within layouts/application (16.9ms)
+  Rendered partials/_navbar.html.erb (10.5ms)
+  Rendered partials/_footer.html.erb (0.3ms)
+Completed 200 OK in 61ms (Views: 53.0ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/projects/1/donations/new" for 127.0.0.1 at 2018-03-02 12:17:53 -0500
+Processing by DonationsController#new as HTML
+  Parameters: {"project_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/_form.html.erb (2.4ms)
+  Rendered donations/new.html.erb within layouts/application (3.6ms)
+  Rendered partials/_navbar.html.erb (3.1ms)
+  Rendered partials/_footer.html.erb (0.3ms)
+Completed 200 OK in 41ms (Views: 33.9ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/projects/1/donations" for 127.0.0.1 at 2018-03-02 12:17:55 -0500
+Processing by DonationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DN59+/hx6UdrDjq/RHUOIqMfaNaUZjzocnjIbxZL59gwWbmjdrkwoUOJDrKPZkfivvaGQXXB31Jl1mcw370PxA==", "donation"=>{"amount"=>"3141"}, "commit"=>"gibe", "project_id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "donations" ("project_id", "user_id", "amount", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["project_id", 1], ["user_id", 2], ["amount", 3141], ["created_at", "2018-03-02 17:17:55.212258"], ["updated_at", "2018-03-02 17:17:55.212258"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/projects/1
+Completed 302 Found in 10ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2018-03-02 12:17:55 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mFocusArea Load (0.3ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  Rendered projects/show.html.erb within layouts/application (7.7ms)
+  Rendered partials/_navbar.html.erb (3.7ms)
+  Rendered partials/_footer.html.erb (0.4ms)
+Completed 200 OK in 48ms (Views: 41.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/user/donations" for 127.0.0.1 at 2018-03-02 12:17:59 -0500
+Processing by UsersController#donations as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/donations.html.erb within layouts/application
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  Rendered donations/_donation-status-form.html.erb (2.7ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered users/donations.html.erb within layouts/application (15.5ms)
+  Rendered partials/_navbar.html.erb (3.2ms)
+  Rendered partials/_footer.html.erb (0.3ms)
+Completed 200 OK in 53ms (Views: 47.1ms | ActiveRecord: 3.1ms)
+
+
+Started PATCH "/projects/1/donations/2" for 127.0.0.1 at 2018-03-02 12:18:03 -0500
+Processing by DonationsController#update as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f90KJrOgl3ulLyGedI/4hKhxxR+guzK0RVFm+ZS0p5duOsfqgGh1zoSlQp0XfmylZoQdlLswK3l6qRPBGLet6Q==", "donation"=>{"status"=>"decline"}, "commit"=>"submit", "project_id"=>"1", "id"=>"2"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.6ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Donation Load (0.1ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "donations" SET "status" = $1, "updated_at" = $2 WHERE "donations"."id" = $3[0m  [["status", "decline"], ["updated_at", "2018-03-02 17:18:03.176467"], ["id", 2]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  Rendering donations/update.js.erb
+  Rendered donations/update.js.erb (0.7ms)
+Completed 200 OK in 42ms (Views: 7.8ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/user/donations" for 127.0.0.1 at 2018-03-02 12:18:51 -0500
+Processing by UsersController#donations as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/donations.html.erb within layouts/application
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered users/donations.html.erb within layouts/application (8.6ms)
+  Rendered partials/_navbar.html.erb (2.2ms)
+  Rendered partials/_footer.html.erb (0.3ms)
+Completed 200 OK in 34ms (Views: 28.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/projects/1/donations/new" for 127.0.0.1 at 2018-03-02 12:18:59 -0500
+Processing by DonationsController#new as HTML
+  Parameters: {"project_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/_form.html.erb (2.2ms)
+  Rendered donations/new.html.erb within layouts/application (3.7ms)
+  Rendered partials/_navbar.html.erb (4.0ms)
+  Rendered partials/_footer.html.erb (0.3ms)
+Completed 200 OK in 47ms (Views: 39.5ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/projects/1/donations" for 127.0.0.1 at 2018-03-02 12:19:00 -0500
+Processing by DonationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XGFKQmdoiNVFEZFHhjJG/8jYE98gqbu7KW3xRQhdK/Ng5o4a6aBRM22WpUpNIQ8/1TH9SMEOWAE+w14awavD7w==", "donation"=>{"amount"=>"1"}, "commit"=>"gibe", "project_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "donations" ("project_id", "user_id", "amount", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["project_id", 1], ["user_id", 2], ["amount", 1], ["created_at", "2018-03-02 17:19:00.872409"], ["updated_at", "2018-03-02 17:19:00.872409"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/projects/1
+Completed 302 Found in 8ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2018-03-02 12:19:00 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mFocusArea Load (0.3ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  Rendered projects/show.html.erb within layouts/application (5.2ms)
+  Rendered partials/_navbar.html.erb (2.3ms)
+  Rendered partials/_footer.html.erb (0.2ms)
+Completed 200 OK in 34ms (Views: 29.4ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/projects/1/donations" for 127.0.0.1 at 2018-03-02 12:19:03 -0500
+Processing by DonationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XGFKQmdoiNVFEZFHhjJG/8jYE98gqbu7KW3xRQhdK/Ng5o4a6aBRM22WpUpNIQ8/1TH9SMEOWAE+w14awavD7w==", "donation"=>{"amount"=>"12"}, "commit"=>"gibe", "project_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "donations" ("project_id", "user_id", "amount", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["project_id", 1], ["user_id", 2], ["amount", 12], ["created_at", "2018-03-02 17:19:03.466334"], ["updated_at", "2018-03-02 17:19:03.466334"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/projects/1
+Completed 302 Found in 11ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2018-03-02 12:19:03 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mFocusArea Load (0.3ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  Rendered projects/show.html.erb within layouts/application (7.2ms)
+  Rendered partials/_navbar.html.erb (2.2ms)
+  Rendered partials/_footer.html.erb (0.2ms)
+Completed 200 OK in 48ms (Views: 42.1ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/projects/1/donations" for 127.0.0.1 at 2018-03-02 12:19:04 -0500
+Processing by DonationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XGFKQmdoiNVFEZFHhjJG/8jYE98gqbu7KW3xRQhdK/Ng5o4a6aBRM22WpUpNIQ8/1TH9SMEOWAE+w14awavD7w==", "donation"=>{"amount"=>"12"}, "commit"=>"gibe", "project_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "donations" ("project_id", "user_id", "amount", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["project_id", 1], ["user_id", 2], ["amount", 12], ["created_at", "2018-03-02 17:19:04.730988"], ["updated_at", "2018-03-02 17:19:04.730988"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/projects/1
+Completed 302 Found in 10ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2018-03-02 12:19:04 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mFocusArea Load (0.4ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  Rendered projects/show.html.erb within layouts/application (7.1ms)
+  Rendered partials/_navbar.html.erb (3.2ms)
+  Rendered partials/_footer.html.erb (0.3ms)
+Completed 200 OK in 44ms (Views: 39.2ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/projects/1/donations" for 127.0.0.1 at 2018-03-02 12:19:06 -0500
+Processing by DonationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XGFKQmdoiNVFEZFHhjJG/8jYE98gqbu7KW3xRQhdK/Ng5o4a6aBRM22WpUpNIQ8/1TH9SMEOWAE+w14awavD7w==", "donation"=>{"amount"=>"12"}, "commit"=>"gibe", "project_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "donations" ("project_id", "user_id", "amount", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["project_id", 1], ["user_id", 2], ["amount", 12], ["created_at", "2018-03-02 17:19:06.405333"], ["updated_at", "2018-03-02 17:19:06.405333"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/projects/1
+Completed 302 Found in 8ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2018-03-02 12:19:06 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mFocusArea Load (0.2ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  Rendered projects/show.html.erb within layouts/application (5.0ms)
+  Rendered partials/_navbar.html.erb (2.2ms)
+  Rendered partials/_footer.html.erb (0.2ms)
+Completed 200 OK in 31ms (Views: 26.9ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/projects/1/donations" for 127.0.0.1 at 2018-03-02 12:19:07 -0500
+Processing by DonationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XGFKQmdoiNVFEZFHhjJG/8jYE98gqbu7KW3xRQhdK/Ng5o4a6aBRM22WpUpNIQ8/1TH9SMEOWAE+w14awavD7w==", "donation"=>{"amount"=>"12"}, "commit"=>"gibe", "project_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "donations" ("project_id", "user_id", "amount", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["project_id", 1], ["user_id", 2], ["amount", 12], ["created_at", "2018-03-02 17:19:07.139781"], ["updated_at", "2018-03-02 17:19:07.139781"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/projects/1
+Completed 302 Found in 7ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2018-03-02 12:19:07 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mFocusArea Load (0.2ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  Rendered projects/show.html.erb within layouts/application (4.9ms)
+  Rendered partials/_navbar.html.erb (2.2ms)
+  Rendered partials/_footer.html.erb (0.3ms)
+Completed 200 OK in 32ms (Views: 28.2ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/projects/1/donations" for 127.0.0.1 at 2018-03-02 12:19:08 -0500
+Processing by DonationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XGFKQmdoiNVFEZFHhjJG/8jYE98gqbu7KW3xRQhdK/Ng5o4a6aBRM22WpUpNIQ8/1TH9SMEOWAE+w14awavD7w==", "donation"=>{"amount"=>"12"}, "commit"=>"gibe", "project_id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "donations" ("project_id", "user_id", "amount", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["project_id", 1], ["user_id", 2], ["amount", 12], ["created_at", "2018-03-02 17:19:08.092275"], ["updated_at", "2018-03-02 17:19:08.092275"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/projects/1
+Completed 302 Found in 10ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2018-03-02 12:19:08 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mFocusArea Load (0.3ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  Rendered projects/show.html.erb within layouts/application (7.4ms)
+  Rendered partials/_navbar.html.erb (3.1ms)
+  Rendered partials/_footer.html.erb (0.3ms)
+Completed 200 OK in 43ms (Views: 37.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/user/donations" for 127.0.0.1 at 2018-03-02 12:19:09 -0500
+Processing by UsersController#donations as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/donations.html.erb within layouts/application
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  [1m[36mDonation Load (0.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  Rendered donations/_donation-status-form.html.erb (2.5ms)
+  Rendered donations/_donation-status-form.html.erb (1.4ms)
+  Rendered donations/_donation-status-form.html.erb (1.2ms)
+  Rendered donations/_donation-status-form.html.erb (1.2ms)
+  Rendered donations/_donation-status-form.html.erb (1.4ms)
+  Rendered donations/_donation-status-form.html.erb (1.6ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered users/donations.html.erb within layouts/application (27.6ms)
+  Rendered partials/_navbar.html.erb (2.4ms)
+  Rendered partials/_footer.html.erb (0.3ms)
+Completed 200 OK in 54ms (Views: 47.5ms | ActiveRecord: 3.6ms)
+
+
+Started PATCH "/projects/1/donations/3" for 127.0.0.1 at 2018-03-02 12:19:13 -0500
+Processing by DonationsController#update as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lLfyMMrqu3h76PN3ifGJE3qaXwmlOea74pLIOlpqc3CFUD/8+SJZzVpikHTqAB0ytG+Hgr6y/3bdar0C1ml5Dg==", "donation"=>{"status"=>"decline"}, "commit"=>"submit", "project_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "donations" SET "status" = $1, "updated_at" = $2 WHERE "donations"."id" = $3[0m  [["status", "decline"], ["updated_at", "2018-03-02 17:19:13.588711"], ["id", 3]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering donations/update.js.erb
+  Rendered donations/update.js.erb (0.7ms)
+Completed 200 OK in 26ms (Views: 7.7ms | ActiveRecord: 3.4ms)
+
+
+Started PATCH "/projects/1/donations/3" for 127.0.0.1 at 2018-03-02 12:19:25 -0500
+Processing by DonationsController#update as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lLfyMMrqu3h76PN3ifGJE3qaXwmlOea74pLIOlpqc3CFUD/8+SJZzVpikHTqAB0ytG+Hgr6y/3bdar0C1ml5Dg==", "donation"=>{"status"=>"decline"}, "commit"=>"submit", "project_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering donations/update.js.erb
+  Rendered donations/update.js.erb (0.5ms)
+Completed 200 OK in 20ms (Views: 6.1ms | ActiveRecord: 1.6ms)
+
+
+Started PATCH "/projects/1/donations/3" for 127.0.0.1 at 2018-03-02 12:19:32 -0500
+Processing by DonationsController#update as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lLfyMMrqu3h76PN3ifGJE3qaXwmlOea74pLIOlpqc3CFUD/8+SJZzVpikHTqAB0ytG+Hgr6y/3bdar0C1ml5Dg==", "donation"=>{"status"=>"decline"}, "commit"=>"submit", "project_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering donations/update.js.erb
+  Rendered donations/update.js.erb (0.7ms)
+Completed 200 OK in 31ms (Views: 7.7ms | ActiveRecord: 2.9ms)
+
+
+Started PATCH "/projects/1/donations/4" for 127.0.0.1 at 2018-03-02 12:19:34 -0500
+Processing by DonationsController#update as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lLfyMMrqu3h76PN3ifGJE3qaXwmlOea74pLIOlpqc3CFUD/8+SJZzVpikHTqAB0ytG+Hgr6y/3bdar0C1ml5Dg==", "donation"=>{"status"=>"pending"}, "commit"=>"submit", "project_id"=>"1", "id"=>"4"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.7ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering donations/update.js.erb
+  Rendered donations/update.js.erb (0.7ms)
+Completed 200 OK in 35ms (Views: 6.4ms | ActiveRecord: 4.2ms)
+
+
+Started PATCH "/projects/1/donations/3" for 127.0.0.1 at 2018-03-02 12:19:41 -0500
+Processing by DonationsController#update as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lLfyMMrqu3h76PN3ifGJE3qaXwmlOea74pLIOlpqc3CFUD/8+SJZzVpikHTqAB0ytG+Hgr6y/3bdar0C1ml5Dg==", "donation"=>{"status"=>"decline"}, "commit"=>"submit", "project_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE Project Load (0.1ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendering donations/update.js.erb
+  Rendered donations/update.js.erb (0.7ms)
+Completed 200 OK in 42ms (Views: 8.1ms | ActiveRecord: 4.2ms)
+
+
+Started PATCH "/projects/1/donations/3" for 127.0.0.1 at 2018-03-02 12:20:54 -0500
+Processing by DonationsController#update as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lLfyMMrqu3h76PN3ifGJE3qaXwmlOea74pLIOlpqc3CFUD/8+SJZzVpikHTqAB0ytG+Hgr6y/3bdar0C1ml5Dg==", "donation"=>{"status"=>"decline"}, "commit"=>"submit", "project_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering donations/update.js.erb
+  Rendered donations/update.js.erb (0.7ms)
+Completed 200 OK in 24ms (Views: 6.7ms | ActiveRecord: 2.3ms)
+
+
+Started PATCH "/projects/1/donations/4" for 127.0.0.1 at 2018-03-02 12:20:56 -0500
+Processing by DonationsController#update as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lLfyMMrqu3h76PN3ifGJE3qaXwmlOea74pLIOlpqc3CFUD/8+SJZzVpikHTqAB0ytG+Hgr6y/3bdar0C1ml5Dg==", "donation"=>{"status"=>"pending"}, "commit"=>"submit", "project_id"=>"1", "id"=>"4"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering donations/update.js.erb
+  Rendered donations/update.js.erb (0.8ms)
+Completed 200 OK in 28ms (Views: 7.9ms | ActiveRecord: 3.0ms)
+
+
+Started PATCH "/projects/1/donations/5" for 127.0.0.1 at 2018-03-02 12:20:59 -0500
+Processing by DonationsController#update as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lLfyMMrqu3h76PN3ifGJE3qaXwmlOea74pLIOlpqc3CFUD/8+SJZzVpikHTqAB0ytG+Hgr6y/3bdar0C1ml5Dg==", "donation"=>{"status"=>"accept"}, "commit"=>"submit", "project_id"=>"1", "id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "donations" SET "status" = $1, "updated_at" = $2 WHERE "donations"."id" = $3[0m  [["status", "accept"], ["updated_at", "2018-03-02 17:20:59.379293"], ["id", 5]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering donations/update.js.erb
+  Rendered donations/update.js.erb (0.5ms)
+Completed 200 OK in 21ms (Views: 6.1ms | ActiveRecord: 3.0ms)
+
+
+Started PATCH "/projects/1/donations/6" for 127.0.0.1 at 2018-03-02 12:21:05 -0500
+Processing by DonationsController#update as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lLfyMMrqu3h76PN3ifGJE3qaXwmlOea74pLIOlpqc3CFUD/8+SJZzVpikHTqAB0ytG+Hgr6y/3bdar0C1ml5Dg==", "donation"=>{"status"=>"decline"}, "commit"=>"submit", "project_id"=>"1", "id"=>"6"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "donations" SET "status" = $1, "updated_at" = $2 WHERE "donations"."id" = $3[0m  [["status", "decline"], ["updated_at", "2018-03-02 17:21:05.206562"], ["id", 6]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendering donations/update.js.erb
+  Rendered donations/update.js.erb (0.7ms)
+Completed 200 OK in 30ms (Views: 5.7ms | ActiveRecord: 4.2ms)
+
+
+Started PATCH "/projects/1/donations/7" for 127.0.0.1 at 2018-03-02 12:21:07 -0500
+Processing by DonationsController#update as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lLfyMMrqu3h76PN3ifGJE3qaXwmlOea74pLIOlpqc3CFUD/8+SJZzVpikHTqAB0ytG+Hgr6y/3bdar0C1ml5Dg==", "donation"=>{"status"=>"accept"}, "commit"=>"submit", "project_id"=>"1", "id"=>"7"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "donations" SET "status" = $1, "updated_at" = $2 WHERE "donations"."id" = $3[0m  [["status", "accept"], ["updated_at", "2018-03-02 17:21:07.876299"], ["id", 7]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  Rendering donations/update.js.erb
+  Rendered donations/update.js.erb (0.6ms)
+Completed 200 OK in 44ms (Views: 8.4ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/user/donations" for 127.0.0.1 at 2018-03-02 12:22:49 -0500
+Processing by UsersController#donations as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/donations.html.erb within layouts/application
+  [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  Rendered donations/_donation-status-form.html.erb (2.3ms)
+  Rendered donations/_donation-status-form.html.erb (1.2ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered users/donations.html.erb within layouts/application (18.2ms)
+  Rendered partials/_navbar.html.erb (2.6ms)
+  Rendered partials/_footer.html.erb (0.3ms)
+Completed 200 OK in 50ms (Views: 43.6ms | ActiveRecord: 3.3ms)
+
+
+Started PATCH "/projects/1/donations/4" for 127.0.0.1 at 2018-03-02 12:23:46 -0500
+Processing by DonationsController#update as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+Vc9r0hs4TIj5gV4ayija/B1ie0FxFKnmbPbAULhFtXosPBje6QDhwJsZnsI2TdKPoBRZh5PS2qmS645zuIcqw==", "donation"=>{"status"=>"accept"}, "commit"=>"submit", "project_id"=>"1", "id"=>"4"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "donations" SET "status" = $1, "updated_at" = $2 WHERE "donations"."id" = $3[0m  [["status", "accept"], ["updated_at", "2018-03-02 17:23:46.564133"], ["id", 4]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  Rendering donations/update.js.erb
+  Rendered donations/update.js.erb (0.8ms)
+Completed 200 OK in 30ms (Views: 8.2ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/user/donations" for 127.0.0.1 at 2018-03-02 12:24:26 -0500
+Processing by UsersController#donations as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/donations.html.erb within layouts/application
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  Rendered donations/_donation-status-form.html.erb (2.0ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered users/donations.html.erb within layouts/application (12.1ms)
+  Rendered partials/_navbar.html.erb (2.2ms)
+  Rendered partials/_footer.html.erb (0.3ms)
+Completed 200 OK in 37ms (Views: 32.5ms | ActiveRecord: 2.6ms)
+
+
+Started PATCH "/projects/1/donations/8" for 127.0.0.1 at 2018-03-02 14:25:54 -0500
+Processing by DonationsController#update as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tKxzCXwUglrNoPciJ0Xi9gk0wN3+kYDYNyYqBoZ1+HSlS77FT9xg7+wqlCFEtHbXx8EYVuUamRUI3l8+CnbyCg==", "donation"=>{"status"=>"accept"}, "commit"=>"submit", "project_id"=>"1", "id"=>"8"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "donations" SET "status" = $1, "updated_at" = $2 WHERE "donations"."id" = $3[0m  [["status", "accept"], ["updated_at", "2018-03-02 19:25:54.519931"], ["id", 8]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering donations/update.js.erb
+  Rendered donations/update.js.erb (0.5ms)
+Completed 200 OK in 58ms (Views: 5.0ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/user/donations" for 127.0.0.1 at 2018-03-02 14:26:12 -0500
+Processing by UsersController#donations as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/donations.html.erb within layouts/application
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered users/donations.html.erb within layouts/application (19.1ms)
+  Rendered partials/_navbar.html.erb (2.4ms)
+  Rendered partials/_footer.html.erb (0.2ms)
+Completed 200 OK in 58ms (Views: 50.4ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/projects/1/donations/new" for 127.0.0.1 at 2018-03-02 14:28:37 -0500
+Processing by DonationsController#new as HTML
+  Parameters: {"project_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/_form.html.erb (1.8ms)
+  Rendered donations/new.html.erb within layouts/application (2.6ms)
+  Rendered partials/_navbar.html.erb (2.9ms)
+  Rendered partials/_footer.html.erb (0.2ms)
+Completed 200 OK in 32ms (Views: 26.6ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/projects/1/donations" for 127.0.0.1 at 2018-03-02 14:28:40 -0500
+Processing by DonationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QWc3fv8Ln66q0yPbwyqngYlgMHQ1+ZTqqscUht2awJt94PMmccNGSIJUF9YIOe5BlIne49Red1C9abvZFGwohw==", "donation"=>{"amount"=>"123"}, "commit"=>"gibe", "project_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "donations" ("project_id", "user_id", "amount", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["project_id", 1], ["user_id", 2], ["amount", 123], ["created_at", "2018-03-02 19:28:40.185275"], ["updated_at", "2018-03-02 19:28:40.185275"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/projects/1
+Completed 302 Found in 12ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2018-03-02 14:28:40 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mFocusArea Load (0.3ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  Rendered projects/show.html.erb within layouts/application (20.9ms)
+  Rendered partials/_navbar.html.erb (2.3ms)
+  Rendered partials/_footer.html.erb (0.3ms)
+Completed 200 OK in 49ms (Views: 40.4ms | ActiveRecord: 5.1ms)
+
+
+Started POST "/projects/1/donations" for 127.0.0.1 at 2018-03-02 14:28:41 -0500
+Processing by DonationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QWc3fv8Ln66q0yPbwyqngYlgMHQ1+ZTqqscUht2awJt94PMmccNGSIJUF9YIOe5BlIne49Red1C9abvZFGwohw==", "donation"=>{"amount"=>"123"}, "commit"=>"gibe", "project_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "donations" ("project_id", "user_id", "amount", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["project_id", 1], ["user_id", 2], ["amount", 123], ["created_at", "2018-03-02 19:28:41.484769"], ["updated_at", "2018-03-02 19:28:41.484769"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/projects/1
+Completed 302 Found in 12ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2018-03-02 14:28:41 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mFocusArea Load (0.3ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  Rendered projects/show.html.erb within layouts/application (7.0ms)
+  Rendered partials/_navbar.html.erb (3.4ms)
+  Rendered partials/_footer.html.erb (0.4ms)
+Completed 200 OK in 46ms (Views: 39.3ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/projects/1/donations" for 127.0.0.1 at 2018-03-02 14:28:42 -0500
+Processing by DonationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QWc3fv8Ln66q0yPbwyqngYlgMHQ1+ZTqqscUht2awJt94PMmccNGSIJUF9YIOe5BlIne49Red1C9abvZFGwohw==", "donation"=>{"amount"=>"123"}, "commit"=>"gibe", "project_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "donations" ("project_id", "user_id", "amount", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["project_id", 1], ["user_id", 2], ["amount", 123], ["created_at", "2018-03-02 19:28:42.280641"], ["updated_at", "2018-03-02 19:28:42.280641"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/projects/1
+Completed 302 Found in 7ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2018-03-02 14:28:42 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mFocusArea Load (0.2ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  Rendered projects/show.html.erb within layouts/application (4.9ms)
+  Rendered partials/_navbar.html.erb (2.1ms)
+  Rendered partials/_footer.html.erb (0.2ms)
+Completed 200 OK in 31ms (Views: 27.1ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/projects/1/donations" for 127.0.0.1 at 2018-03-02 14:28:42 -0500
+Processing by DonationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QWc3fv8Ln66q0yPbwyqngYlgMHQ1+ZTqqscUht2awJt94PMmccNGSIJUF9YIOe5BlIne49Red1C9abvZFGwohw==", "donation"=>{"amount"=>"123"}, "commit"=>"gibe", "project_id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "donations" ("project_id", "user_id", "amount", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["project_id", 1], ["user_id", 2], ["amount", 123], ["created_at", "2018-03-02 19:28:42.835608"], ["updated_at", "2018-03-02 19:28:42.835608"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/projects/1
+Completed 302 Found in 12ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2018-03-02 14:28:42 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mFocusArea Load (0.3ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  Rendered projects/show.html.erb within layouts/application (8.4ms)
+  Rendered partials/_navbar.html.erb (3.3ms)
+  Rendered partials/_footer.html.erb (0.4ms)
+Completed 200 OK in 47ms (Views: 42.0ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/projects/1/donations" for 127.0.0.1 at 2018-03-02 14:28:43 -0500
+Processing by DonationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QWc3fv8Ln66q0yPbwyqngYlgMHQ1+ZTqqscUht2awJt94PMmccNGSIJUF9YIOe5BlIne49Red1C9abvZFGwohw==", "donation"=>{"amount"=>"123"}, "commit"=>"gibe", "project_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "donations" ("project_id", "user_id", "amount", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["project_id", 1], ["user_id", 2], ["amount", 123], ["created_at", "2018-03-02 19:28:43.388950"], ["updated_at", "2018-03-02 19:28:43.388950"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/projects/1
+Completed 302 Found in 8ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2018-03-02 14:28:43 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mFocusArea Load (0.3ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  Rendered projects/show.html.erb within layouts/application (6.9ms)
+  Rendered partials/_navbar.html.erb (3.6ms)
+  Rendered partials/_footer.html.erb (0.4ms)
+Completed 200 OK in 54ms (Views: 50.0ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/projects/1/donations" for 127.0.0.1 at 2018-03-02 14:28:43 -0500
+Processing by DonationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QWc3fv8Ln66q0yPbwyqngYlgMHQ1+ZTqqscUht2awJt94PMmccNGSIJUF9YIOe5BlIne49Red1C9abvZFGwohw==", "donation"=>{"amount"=>"123"}, "commit"=>"gibe", "project_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "donations" ("project_id", "user_id", "amount", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["project_id", 1], ["user_id", 2], ["amount", 123], ["created_at", "2018-03-02 19:28:43.924492"], ["updated_at", "2018-03-02 19:28:43.924492"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/projects/1
+Completed 302 Found in 11ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2018-03-02 14:28:43 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mFocusArea Load (0.3ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  Rendered projects/show.html.erb within layouts/application (7.4ms)
+  Rendered partials/_navbar.html.erb (3.3ms)
+  Rendered partials/_footer.html.erb (0.4ms)
+Completed 200 OK in 46ms (Views: 39.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2018-03-02 14:28:48 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mFocusArea Load (0.3ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered donations/_donation-status-form.html.erb (2.6ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered donations/_donation-status-form.html.erb (1.9ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered donations/_donation-status-form.html.erb (1.5ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered donations/_donation-status-form.html.erb (1.3ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered donations/_donation-status-form.html.erb (1.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered donations/_donation-status-form.html.erb (1.8ms)
+  Rendered projects/show.html.erb within layouts/application (37.1ms)
+  Rendered partials/_navbar.html.erb (3.4ms)
+  Rendered partials/_footer.html.erb (0.6ms)
+Completed 200 OK in 76ms (Views: 69.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/user/donations" for 127.0.0.1 at 2018-03-02 14:28:57 -0500
+Processing by UsersController#donations as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/donations.html.erb within layouts/application
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  Rendered donations/_donation-status-form.html.erb (2.4ms)
+  Rendered donations/_donation-status-form.html.erb (1.2ms)
+  Rendered donations/_donation-status-form.html.erb (1.3ms)
+  Rendered donations/_donation-status-form.html.erb (1.3ms)
+  Rendered donations/_donation-status-form.html.erb (1.2ms)
+  Rendered donations/_donation-status-form.html.erb (1.7ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered users/donations.html.erb within layouts/application (27.2ms)
+  Rendered partials/_navbar.html.erb (2.5ms)
+  Rendered partials/_footer.html.erb (0.3ms)
+Completed 200 OK in 57ms (Views: 50.5ms | ActiveRecord: 3.0ms)
+
+
+Started PATCH "/projects/1/donations/9" for 127.0.0.1 at 2018-03-02 14:29:03 -0500
+Processing by DonationsController#update as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XA6Tz5o4cEu4+fLsuRE+ZWVBk4G6qDBvhil2VaLqfOFN6V4DqfCS/plzke/a4KpEq7RLCqEjKaK50QNtLul2nw==", "donation"=>{"status"=>"accept"}, "commit"=>"submit", "project_id"=>"1", "id"=>"9"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "donations" SET "status" = $1, "updated_at" = $2 WHERE "donations"."id" = $3[0m  [["status", "accept"], ["updated_at", "2018-03-02 19:29:03.601236"], ["id", 9]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  Rendering donations/update.js.erb
+  Rendered donations/update.js.erb (330.0ms)
+Completed 401 Unauthorized in 368ms (ActiveRecord: 4.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `donation' for #<#<Class:0x00007f0f305c1520>:0x00007f0f31c16d98>
+Did you mean?  @donation):
+    1: console.log("<%= @new_status %>")
+    2: function deleteForm() {
+    3:   const donationHtml = document.querySelector("[donation-status-form-id='<%= @donation.id%>']");
+    4:   donationHtml.innerHtml = '<div class="donation-card-status" >Status: <%= donation.status %></div>';
+    5: }
+    6: 
+    7: function updateStatus() {
+  
+app/views/donations/update.js.erb:4:in `_app_views_donations_update_js_erb__315673091257608570_69851618000240'
+Started PATCH "/projects/1/donations/9" for 127.0.0.1 at 2018-03-02 14:29:12 -0500
+Processing by DonationsController#update as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XA6Tz5o4cEu4+fLsuRE+ZWVBk4G6qDBvhil2VaLqfOFN6V4DqfCS/plzke/a4KpEq7RLCqEjKaK50QNtLul2nw==", "donation"=>{"status"=>"accept"}, "commit"=>"submit", "project_id"=>"1", "id"=>"9"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering donations/update.js.erb
+  Rendered donations/update.js.erb (331.5ms)
+Completed 401 Unauthorized in 355ms (ActiveRecord: 2.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `donation' for #<#<Class:0x00007f0f305c1520>:0x00007f0f3253b8d8>
+Did you mean?  @donation):
+    1: console.log("<%= @new_status %>")
+    2: function deleteForm() {
+    3:   const donationHtml = document.querySelector("[donation-status-form-id='<%= @donation.id%>']");
+    4:   donationHtml.innerHtml = '<div class="donation-card-status" >Status: <%= donation.status %></div>';
+    5: }
+    6: 
+    7: function updateStatus() {
+  
+app/views/donations/update.js.erb:4:in `_app_views_donations_update_js_erb__315673091257608570_69851622802360'
+Started GET "/user/donations" for 127.0.0.1 at 2018-03-02 14:29:41 -0500
+Processing by UsersController#donations as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/donations.html.erb within layouts/application
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  Rendered donations/_donation-status-form.html.erb (2.6ms)
+  Rendered donations/_donation-status-form.html.erb (1.3ms)
+  Rendered donations/_donation-status-form.html.erb (1.9ms)
+  Rendered donations/_donation-status-form.html.erb (1.4ms)
+  Rendered donations/_donation-status-form.html.erb (1.4ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered users/donations.html.erb within layouts/application (25.8ms)
+  Rendered partials/_navbar.html.erb (2.3ms)
+  Rendered partials/_footer.html.erb (0.2ms)
+Completed 200 OK in 53ms (Views: 46.0ms | ActiveRecord: 3.1ms)
+
+
+Started PATCH "/projects/1/donations/10" for 127.0.0.1 at 2018-03-02 14:29:44 -0500
+Processing by DonationsController#update as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6mqMusMCvlYRrEX96fbMZLuoMwNWryaweJu5LWvwJlr7jUF28Mpc4zAmJv6KB1hFdV3riE0kP31HY8wV5/MsJA==", "donation"=>{"status"=>"accept"}, "commit"=>"submit", "project_id"=>"1", "id"=>"10"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "donations" SET "status" = $1, "updated_at" = $2 WHERE "donations"."id" = $3[0m  [["status", "accept"], ["updated_at", "2018-03-02 19:29:44.428283"], ["id", 10]]
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering donations/update.js.erb
+  Rendered donations/update.js.erb (1.0ms)
+Completed 200 OK in 34ms (Views: 10.6ms | ActiveRecord: 5.7ms)
+
+
+Started PATCH "/projects/1/donations/10" for 127.0.0.1 at 2018-03-02 14:30:27 -0500
+Processing by DonationsController#update as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6mqMusMCvlYRrEX96fbMZLuoMwNWryaweJu5LWvwJlr7jUF28Mpc4zAmJv6KB1hFdV3riE0kP31HY8wV5/MsJA==", "donation"=>{"status"=>"accept"}, "commit"=>"submit", "project_id"=>"1", "id"=>"10"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  Rendering donations/update.js.erb
+  Rendered donations/update.js.erb (0.7ms)
+Completed 200 OK in 25ms (Views: 8.1ms | ActiveRecord: 1.8ms)
+
+
+Started PATCH "/projects/1/donations/11" for 127.0.0.1 at 2018-03-02 14:30:37 -0500
+Processing by DonationsController#update as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6mqMusMCvlYRrEX96fbMZLuoMwNWryaweJu5LWvwJlr7jUF28Mpc4zAmJv6KB1hFdV3riE0kP31HY8wV5/MsJA==", "donation"=>{"status"=>"accept"}, "commit"=>"submit", "project_id"=>"1", "id"=>"11"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "donations" SET "status" = $1, "updated_at" = $2 WHERE "donations"."id" = $3[0m  [["status", "accept"], ["updated_at", "2018-03-02 19:30:37.186644"], ["id", 11]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendering donations/update.js.erb
+  Rendered donations/update.js.erb (0.7ms)
+Completed 200 OK in 27ms (Views: 8.1ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/user/donations" for 127.0.0.1 at 2018-03-02 14:31:15 -0500
+Processing by UsersController#donations as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/donations.html.erb within layouts/application
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  Rendered donations/_donation-status-form.html.erb (1.6ms)
+  Rendered donations/_donation-status-form.html.erb (0.9ms)
+  Rendered donations/_donation-status-form.html.erb (0.7ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 3]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered users/donations.html.erb within layouts/application (13.8ms)
+  Rendered partials/_navbar.html.erb (2.3ms)
+  Rendered partials/_footer.html.erb (0.5ms)
+Completed 200 OK in 37ms (Views: 32.8ms | ActiveRecord: 2.1ms)
+
+
+Started PATCH "/projects/1/donations/12" for 127.0.0.1 at 2018-03-02 14:31:17 -0500
+Processing by DonationsController#update as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KqJQ3DdTC+DGqjogZE8rintMuyUkHZVhM+XNY/lqHwk7RZ0QBJvpVecgWSMHvr+rtbljrj+WjKwMHbhbdWkVdw==", "donation"=>{"status"=>"accept"}, "commit"=>"submit", "project_id"=>"1", "id"=>"12"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "donations" SET "status" = $1, "updated_at" = $2 WHERE "donations"."id" = $3[0m  [["status", "accept"], ["updated_at", "2018-03-02 19:31:17.441731"], ["id", 12]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  Rendering donations/update.js.erb
+  Rendered donations/update.js.erb (0.8ms)
+Completed 200 OK in 38ms (Views: 14.6ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/user/donations" for 127.0.0.1 at 2018-03-02 14:31:48 -0500
+Processing by UsersController#donations as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/donations.html.erb within layouts/application
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  Rendered donations/_donation-status-form.html.erb (2.3ms)
+  Rendered donations/_donation-status-form.html.erb (1.1ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered users/donations.html.erb within layouts/application (17.6ms)
+  Rendered partials/_navbar.html.erb (3.3ms)
+  Rendered partials/_footer.html.erb (0.3ms)
+Completed 200 OK in 54ms (Views: 47.7ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/user/donations" for 127.0.0.1 at 2018-03-02 14:34:35 -0500
+Processing by UsersController#donations as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/donations.html.erb within layouts/application
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  Rendered donations/_donation-status-form.html.erb (2.0ms)
+  Rendered donations/_donation-status-form.html.erb (0.9ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered users/donations.html.erb within layouts/application (12.5ms)
+  Rendered partials/_navbar.html.erb (2.2ms)
+  Rendered partials/_footer.html.erb (0.2ms)
+Completed 200 OK in 38ms (Views: 33.4ms | ActiveRecord: 2.4ms)
+
+
+Started PATCH "/projects/1/donations/13" for 127.0.0.1 at 2018-03-02 14:34:37 -0500
+Processing by DonationsController#update as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"umS7gb+k3x6aNSdsb5UlHolvBGwsfngOOoj8ibskYcKrg3ZNjGw9q7u/RG8MZLE/R5rc5zf1YcMFcImxNydrvA==", "donation"=>{"status"=>"accept"}, "commit"=>"submit", "project_id"=>"1", "id"=>"13"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT  "donations".* FROM "donations" WHERE "donations"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "donations" SET "status" = $1, "updated_at" = $2 WHERE "donations"."id" = $3[0m  [["status", "accept"], ["updated_at", "2018-03-02 19:34:37.366391"], ["id", 13]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering donations/update.js.erb
+  Rendered donations/update.js.erb (0.5ms)
+Completed 200 OK in 21ms (Views: 6.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/user/donations" for 127.0.0.1 at 2018-03-02 14:34:48 -0500
+Processing by UsersController#donations as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/donations.html.erb within layouts/application
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  Rendered donations/_donation-status-form.html.erb (2.3ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered users/donations.html.erb within layouts/application (15.3ms)
+  Rendered partials/_navbar.html.erb (2.9ms)
+  Rendered partials/_footer.html.erb (0.3ms)
+Completed 200 OK in 49ms (Views: 43.7ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2018-03-02 14:44:24 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mFocusArea Load (0.2ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered donations/_donation-status-form.html.erb (26.6ms)
+  Rendered projects/show.html.erb within layouts/application (80.1ms)
+  Rendered partials/_navbar.html.erb (3.2ms)
+  Rendered partials/_footer.html.erb (0.3ms)
+Completed 200 OK in 4726ms (Views: 4676.8ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-02 14:44:41 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.4ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.4ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.3ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.3ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.4ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.3ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.3ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered pages/home.html.erb within layouts/application (27.9ms)
+  Rendered partials/_navbar.html.erb (2.0ms)
+  Rendered partials/_footer.html.erb (0.4ms)
+Completed 200 OK in 53ms (Views: 47.7ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-02 14:49:25 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.5ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.5ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.4ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.4ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.3ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.3ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.2ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered pages/home.html.erb within layouts/application (155.0ms)
+  Rendered partials/_navbar.html.erb (3.2ms)
+  Rendered partials/_footer.html.erb (0.3ms)
+Completed 200 OK in 1463ms (Views: 1431.8ms | ActiveRecord: 17.7ms)
+
+
+Started GET "/user/projects" for 127.0.0.1 at 2018-03-02 14:49:30 -0500
+Processing by UsersController#projects as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/projects.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  [1m[36mFocusArea Load (0.3ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 2]]
+  [1m[36mFocusArea Load (0.2ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 3]]
+  [1m[36mFocusArea Load (0.2ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[36mFocusArea Load (0.2ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/projects.html.erb within layouts/application (46.3ms)
+  Rendered partials/_navbar.html.erb (2.2ms)
+  Rendered partials/_footer.html.erb (0.3ms)
+Completed 200 OK in 78ms (Views: 65.1ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/user/donations" for 127.0.0.1 at 2018-03-02 14:49:31 -0500
+Processing by UsersController#donations as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/donations.html.erb within layouts/application
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  Rendered donations/_donation-status-form.html.erb (57.1ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered users/donations.html.erb within layouts/application (72.1ms)
+  Rendered partials/_navbar.html.erb (3.1ms)
+  Rendered partials/_footer.html.erb (0.3ms)
+Completed 200 OK in 109ms (Views: 102.6ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-02 14:58:48 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.4ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.4ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.3ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.3ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.4ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.4ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.3ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered pages/home.html.erb within layouts/application (128.2ms)
+  Rendered partials/_navbar.html.erb (3.5ms)
+  Rendered partials/_footer.html.erb (0.4ms)
+Completed 200 OK in 1389ms (Views: 1358.3ms | ActiveRecord: 16.7ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-03-02 14:59:01 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"bpXIa1LsoxQgAc2v7raIm/ACc1DzludQsSomXtM6nQd/cgWnYSRBoQGLrqyNRxy6Pver2+gd/p2O0lNmXzmXeQ=="}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 18ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-02 14:59:01 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.2ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.2ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.3ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.4ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.3ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.3ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.3ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered pages/home.html.erb within layouts/application (35.6ms)
+  Rendered partials/_navbar.html.erb (2.6ms)
+  Rendered partials/_footer.html.erb (0.3ms)
+Completed 200 OK in 71ms (Views: 66.1ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-03-02 14:59:02 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (34.4ms)
+  Rendered partials/_navbar.html.erb (1.6ms)
+  Rendered partials/_footer.html.erb (0.2ms)
+Completed 200 OK in 58ms (Views: 57.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-03-02 14:59:15 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"or+67IUBu/grmmO1zF7pS7CSSdP0jwyAOYkBPbKTuNHcRUUtz6dQdGYVMuT9h252pixsywWPBIFvBbdUugiUtQ==", "user"=>{"email"=>"testuser@testuser.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "photo_cache"=>""}, "commit"=>"Sign up"}
+Unpermitted parameter: :photo_cache
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testuser@testuser.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (13.1ms)
+  Rendered partials/_navbar.html.erb (3.1ms)
+  Rendered partials/_footer.html.erb (0.4ms)
+Completed 200 OK in 308ms (Views: 51.9ms | ActiveRecord: 1.0ms)
+
+

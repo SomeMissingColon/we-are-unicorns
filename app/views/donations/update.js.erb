@@ -1,11 +1,16 @@
-console.log("<%= @donation.id %>")
-function deleteForm() {
+const donationStatusHtml = document.querySelector("[donation-status-form-id='<%= @donation.id%>']");
 
+console.log("<%= @new_status %>")
+function deleteForm() {
+  donationStatusHtml.childNodes.forEach(function(child){
+    console.log(child)
+    child.remove();
+  });
 }
 
 function updateStatus() {
   const donationHtml = document.querySelector("[donation-id='<%= @donation.id%>']");
-  if ('<%= @donation.status %>' == 'accept') {
+  if ('<%= @new_status %>' == 'accept') {
   donationHtml.className += " donation-card-accept";
   }else{
   donationHtml.className += " donation-card-decline"
@@ -13,3 +18,4 @@ function updateStatus() {
 }
 
 updateStatus()
+deleteForm()
