@@ -1,0 +1,13 @@
+.btn-create {
+  background-color: $purple;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+  font-size: 14px;
+  color: white;
+  text-decoration: none;
+  z-index: 4;
+}
+
+.btn-create:hover {
+    opacity: 0.9;
+    color: white;
+  }

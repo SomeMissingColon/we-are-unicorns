@@ -1,22 +1,21 @@
-<div class="container">
-  <%= simple_form_for(@project) do |f| %>
-  <% if @project.errors.any? %>
-  <div class="error-container">
-    <ul>
-      <% @project.errors.full_message each do |message|  %>
-      <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-  <% end %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <%= f.input :user, :as => :hidden, :value => current_user  %>
-    <%= f.label :description %>
-    <%= f.text_field :description %>
-    <%= f.association :focus_area %>
-    <%= f.input :photo %>
-    <%= f.input :photo_cache, as: :hidden %>
-    <%= f.submit 'ready!' %>
-  <% end %>
+<div class="devise-container">
+<h2>Create your project</h2>
+<%= simple_form_for(@project) do |f| %>
+<% if @project.errors.any? %>
+<div class="error-container">
+  <ul>
+    <% @project.errors.full_message each do |message|  %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+  <%= f.input :name %>
+  <%= f.input :user, :as => :hidden, :value => current_user  %>
+  <%= f.input :description %>
+  <%= f.association :focus_area %>
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
+  <%= f.submit 'Supbmit!', class: "btn btn-create grow" %>
+<% end %>
 </div>
