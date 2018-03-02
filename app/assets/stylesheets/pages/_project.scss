@@ -42,9 +42,10 @@
 .amounts {
   display: flex;
   position: absolute;
-  bottom: 0px;
+  bottom: -2px;
   left: 0px;
   background-color: #f4f4f4;
+  border-radius: 2px;
 }
 
 .given {
@@ -58,4 +59,19 @@
   padding: 10px;
   padding-left: 10px;
   text-align: center;
+}
+
+.container {
+  display: flex;
+  padding: 50px;
+}
+
+.project-description {
+  padding: 50px;
+  border-top: black solid 1px;
+  border-bottom: black solid 1px;
+}
+
+.social-links {
+  padding: 80px;
 }
