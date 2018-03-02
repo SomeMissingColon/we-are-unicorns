@@ -61,24 +61,27 @@
   text-align: center;
 }
 
-.container {
-  display: flex;
-  padding: 50px;
-}
-
-.container-subtitle {
-  padding: 10px;
+.container-project {
+ display: flex;
+ margin-top: 20px;
+ padding: 10px;
+ border-top: black solid 1px;
+ border-bottom: black solid 1px;
 }
 
 .project-description {
-  padding: 50px;
-  border-top: $purple solid 1px;
-  border-bottom: $purple solid 1px;
+ padding: 30px;
+
 }
 
-.social-links {
-  padding: 50px;
-  .list-inline {
-  display: inline-block;
-  }
+.project-media-link {
+ float: right;
+ padding-right: 5em;
 }
+
+.edit-delete {
+ float:right;
+ padding-right: 4em;
+ padding-top: 1em;
+}
+
