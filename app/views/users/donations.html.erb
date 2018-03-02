@@ -1,17 +1,17 @@
-<h4>Sent donations</h4>
+<div class="main-container">
+  <h2>My donations</h2>
 <% current_user.donations.each do |donation| %>
 <div class="container-donation">
   <div class="donation-card">
     <div class="donation-card-name" ><%= donation.project.name.capitalize %></div>
-    <div class="donation-card-amount" >Amount offered: <%= donation.amount %></div>
+    <div class="donation-card-amount" >Amount given: <%= donation.amount %>$</div>
     <div class="donation-card-status" >Status: <%= donation.status %></div>
   </div>
 </div>
 <% end %>
+</div>
 
-
-
-<h4> Donation received </h4>
+<!-- <h4> Donation received </h4>
 <% current_user.projects.each do |project| %>
 <% unless project.donations.count.zero? %>
 <div class="container-donation">
@@ -35,3 +35,4 @@
   </div>
 </div>
 <% end %>
+ -->

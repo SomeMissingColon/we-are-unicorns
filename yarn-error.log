@@ -1,14 +1,14 @@
 Arguments: 
-  /usr/local/Cellar/node/9.6.1/bin/node /usr/local/Cellar/yarn/1.3.2/libexec/bin/yarn.js check --integrity
+  /usr/local/Cellar/node/9.5.0/bin/node /usr/local/Cellar/yarn/1.3.2/libexec/bin/yarn.js check --integrity
 
 PATH: 
-  /Users/Yves/.rbenv/versions/2.4.3/lib/ruby/gems/2.4.0/bin:/Users/Yves/.rbenv/versions/2.4.3/bin:/usr/local/Cellar/rbenv/1.1.1/libexec:./bin:./node_modules/.bin:/Users/Yves/.rbenv/shims:/Users/Yves/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/sbin
+  /Users/damienguillot/.rbenv/versions/2.4.3/lib/ruby/gems/2.4.0/bin:/Users/damienguillot/.rbenv/versions/2.4.3/bin:/usr/local/Cellar/rbenv/1.1.1/libexec:./bin:./node_modules/.bin:/Users/damienguillot/.rbenv/shims:/Users/damienguillot/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin
 
 Yarn version: 
   1.3.2
 
 Node version: 
-  9.6.1
+  9.5.0
 
 Platform: 
   darwin x64
@@ -23,7 +23,7 @@ npm manifest:
       "jquery": "^3.3.1"
     },
     "devDependencies": {
-      "webpack-dev-server": "^3.0.0"
+      "webpack-dev-server": "^3.1.0"
     }
   }
 
@@ -5893,9 +5893,9 @@ Lockfile:
       url-join "^2.0.2"
       webpack-log "^1.0.1"
   
-  webpack-dev-server@^3.0.0:
-    version "3.0.0"
-    resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-3.0.0.tgz#0ca2d293dc7a7b1a94fc5fd62cfca2a9fa61bcf7"
+  webpack-dev-server@^3.1.0:
+    version "3.1.0"
+    resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-3.1.0.tgz#5d2365514d9dfa0d415502742d2cc28afc4a32d8"
     dependencies:
       ansi-html "0.0.7"
       array-includes "^3.0.3"
@@ -5923,9 +5923,10 @@ Lockfile:
       strip-ansi "^3.0.0"
       supports-color "^5.1.0"
       webpack-dev-middleware "2.0.6"
+      webpack-log "^1.1.2"
       yargs "9.0.1"
   
-  webpack-log@^1.0.1:
+  webpack-log@^1.0.1, webpack-log@^1.1.2:
     version "1.1.2"
     resolved "https://registry.yarnpkg.com/webpack-log/-/webpack-log-1.1.2.tgz#cdc76016537eed24708dc6aa3d1e52189efee107"
     dependencies:

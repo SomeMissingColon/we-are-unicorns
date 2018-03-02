@@ -1,4 +1,7 @@
-<%= simple_form_for([@project, @donation]) do |f| %>
+
+<div class="devise-container">
+  <h2>Please give a lot!</h2>
+  <%= simple_form_for([@project, @donation]) do |f| %>
  <% if @donation.errors.any? %>
     <div class="error-container">
       <ul>
@@ -8,7 +11,8 @@
       </ul>
     </div>
   <% end %>
-  <%= f.label :amount %>
-  <%= f.text_field :amount %>
-  <%= f.submit 'gibe' %>
+  <%= f.input :amount %>
+  <%= f.submit 'gibe', class: "btn btn-create"%>
 <% end %>
+
+</div>
