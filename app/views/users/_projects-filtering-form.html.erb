@@ -1,0 +1,14 @@
+<%= simple_form_for(@user_projects) do |f| %>
+<% if @user_projects.errors.any? %>
+<div class="error-container">
+  <ul>
+    <% @user_projects.errors.full_message each do |message|  %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+  <%= f.label :name %>
+  <%= f.association :focus_area %>
+  <%= f.submit 'ready!' %>
+<% end %>

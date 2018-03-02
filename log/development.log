@@ -38,3 +38,92 @@ Processing by PagesController#home as HTML
 Completed 200 OK in 5838ms (Views: 5826.0ms | ActiveRecord: 3.4ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-03-01 08:50:35 -0500
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mProject Load (5.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  Rendered pages/home.html.erb within layouts/application (48.8ms)
+  Rendered partials/_navbar.html.erb (7.7ms)
+Completed 200 OK in 1916ms (Views: 1889.2ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/user/projects" for 127.0.0.1 at 2018-03-01 08:50:46 -0500
+Processing by UsersController#projects as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-03-01 08:50:46 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (83.6ms)
+  Rendered partials/_navbar.html.erb (2.3ms)
+Completed 200 OK in 157ms (Views: 115.2ms | ActiveRecord: 6.9ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-03-01 08:50:53 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2w4TJgItElmO0Sg4GsM0n3gFiDoJGAJgrLuArFiX6CkXvmWf2y0z+UkxhUtsyZdUvfeM+iuA3DXgQYDYiEyiNQ==", "user"=>{"email"=>"user1@user1.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "user1@user1.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.6ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "sign_in_count" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["current_sign_in_at", "2018-03-01 13:50:53.519730"], ["sign_in_count", 2], ["updated_at", "2018-03-01 13:50:53.522007"], ["id", 1]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/user/projects
+Completed 302 Found in 275ms (ActiveRecord: 8.3ms)
+
+
+Started GET "/user/projects" for 127.0.0.1 at 2018-03-01 08:50:53 -0500
+Processing by UsersController#projects as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/projects.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mDonation Load (2.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/projects.html.erb within layouts/application (54.5ms)
+  Rendered partials/_navbar.html.erb (2.8ms)
+Completed 200 OK in 91ms (Views: 79.1ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/user/projects" for 127.0.0.1 at 2018-03-01 08:53:00 -0500
+Processing by UsersController#projects as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/projects.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/projects.html.erb within layouts/application (7.9ms)
+  Rendered partials/_navbar.html.erb (2.8ms)
+Completed 200 OK in 41ms (Views: 36.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/user/projects" for 127.0.0.1 at 2018-03-01 08:53:18 -0500
+Processing by UsersController#projects as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/projects.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/projects.html.erb within layouts/application (7.1ms)
+  Rendered partials/_navbar.html.erb (3.3ms)
+Completed 200 OK in 39ms (Views: 35.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/user/projects" for 127.0.0.1 at 2018-03-01 08:54:01 -0500
+Processing by UsersController#projects as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/projects.html.erb within layouts/application
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  Rendered users/_projects-filtering-form.html.erb (9.9ms)
+  Rendered users/projects.html.erb within layouts/application (11.8ms)
+Completed 401 Unauthorized in 17ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<Project::ActiveRecord_Associations_CollectionProxy:0x00007f2aea635bc0>
+Did you mean?  to_set
+               to_ary):
+    1: <%= simple_form_for(@user_projects) do |f| %>
+    2: <% if @user_projects.errors.any? %>
+    3: <div class="error-container">
+    4:   <ul>
+  
+app/views/users/_projects-filtering-form.html.erb:1:in `_app_views_users__projects_filtering_form_html_erb___1855387845586283510_69911148864500'
+app/views/users/projects.html.erb:3:in `_app_views_users_projects_html_erb__1298035271850006913_69911148885860'

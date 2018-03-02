@@ -1,5 +1,6 @@
 <h1> projects </h1>
-
+<% @user_projects = current_user.projects %>
+<%= render 'projects-filtering-form' %>
 <h2>Your projects</h2>
 <div class="container">
   <div class="row">
