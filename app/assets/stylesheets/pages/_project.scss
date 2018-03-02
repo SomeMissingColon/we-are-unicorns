@@ -66,6 +66,10 @@
   padding: 50px;
 }
 
+.container-subtitle {
+  padding: 10px;
+}
+
 .project-description {
   padding: 50px;
   border-top: black solid 1px;
@@ -73,5 +77,8 @@
 }
 
 .social-links {
-  padding: 80px;
+  padding: 50px;
+  .list-inline {
+  display: inline-block;
+  }
 }
