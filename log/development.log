@@ -2831,3 +2831,130 @@ Processing by PagesController#home as HTML
 Completed 200 OK in 962ms (Views: 935.8ms | ActiveRecord: 14.6ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-03-02 12:05:11 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.4ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.4ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.3ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.4ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.3ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.3ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.4ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered pages/home.html.erb within layouts/application (159.5ms)
+  Rendered partials/_navbar.html.erb (2.4ms)
+  Rendered partials/_footer.html.erb (0.3ms)
+Completed 200 OK in 1497ms (Views: 1466.9ms | ActiveRecord: 16.4ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2018-03-02 12:05:15 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  [1m[36mFocusArea Load (0.2ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered projects/show.html.erb within layouts/application (14.3ms)
+  Rendered partials/_navbar.html.erb (1.8ms)
+  Rendered partials/_footer.html.erb (0.2ms)
+Completed 200 OK in 41ms (Views: 34.8ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-02 12:06:18 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.3ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.3ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.3ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.3ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.2ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.2ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.2ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered pages/home.html.erb within layouts/application (90.1ms)
+  Rendered partials/_navbar.html.erb (1.7ms)
+  Rendered partials/_footer.html.erb (0.2ms)
+Completed 200 OK in 5194ms (Views: 5173.0ms | ActiveRecord: 11.1ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2018-03-02 12:06:25 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mFocusArea Load (0.4ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  Rendered projects/show.html.erb within layouts/application (16.2ms)
+  Rendered partials/_navbar.html.erb (1.9ms)
+  Rendered partials/_footer.html.erb (0.2ms)
+Completed 200 OK in 45ms (Views: 38.8ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-02 12:10:20 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.5ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.4ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.4ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.4ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.3ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.3ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFocusArea Load (0.3ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered pages/home.html.erb within layouts/application (119.8ms)
+  Rendered partials/_navbar.html.erb (2.4ms)
+  Rendered partials/_footer.html.erb (0.3ms)
+Completed 200 OK in 1449ms (Views: 1419.2ms | ActiveRecord: 16.6ms)
+
+
+Started GET "/projects/3" for 127.0.0.1 at 2018-03-02 12:10:23 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mFocusArea Load (0.3ms)[0m  [1m[34mSELECT  "focus_areas".* FROM "focus_areas" WHERE "focus_areas"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 3]]
+  Rendered projects/show.html.erb within layouts/application (21.0ms)
+  Rendered partials/_navbar.html.erb (2.4ms)
+  Rendered partials/_footer.html.erb (0.3ms)
+Completed 200 OK in 66ms (Views: 58.1ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-03-02 12:12:58 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (9.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (52.8ms)
+  Rendered partials/_navbar.html.erb (1.8ms)
+  Rendered partials/_footer.html.erb (0.2ms)
+Completed 200 OK in 80ms (Views: 77.3ms | ActiveRecord: 0.0ms)
+
+
