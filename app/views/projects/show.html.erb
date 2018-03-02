@@ -1,13 +1,72 @@
+
+<div class="banner-project-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= @project.photo.file.nil? ? 'https://source.unsplash.com/random' : cl_image_path(@project.photo, height: 300, width: 400, crop: :fill) %>)">
+  <div class="banner-project-name">
+    <h1><%= @project.name.capitalize %></h1>
+  </div>
+  <% unless current_user == @project.user %>
+  <%= link_to(new_project_donation_path(@project)) do %>
+         <button type="button" class="btn project-banner-button"> Donate
+         </button>
+         <% end %>
+         <% end %>
+
+  <div class="amounts">
+    <div class="given">
+      <div>Amount Given</div>
+      <div></div>
+    </div>
+    <div class="total">
+      <div>Total Funding</div>
+      <div><%= @project.received_donations %>$</div>
+    </div>
+  </div>
+</div>
+
+<div class="container-subtitle">
+  <h4>Description</h4>
+</div>
+
+<div class="container">
+  <div class="project-description">
+    <%= @project.description %>
+  </div>
+
+  <div class="social-links">
+    <ul class="list-inline">
+        <li>
+          <i class="fab fa-wordpress-simple"></i>
+        </li>
+        <li >
+          <i class="fab fa-instagram"></i>
+        </li>
+        <li>
+          <i class="fab fa-twitter"></i>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container-subtitle">
+  <h4>Contributor</h4>
+</div>
+
+
+
+
+
+
+
 <% if current_user == @project.user %>
   <%= link_to 'edit', edit_project_path(@project) %>
   |
   <%= link_to 'delete', project_path(@project),
       method: :delete %>
 <% end %>
-
+<!--
 <h1><%= @project.name %></h1>
 <h4><%= @project.focus_area.name %></h4>
-<h3><%= @project.description %></h3>
+<h3><%= @project.description %></h3> -->
 <h4>This project is owned by <%= @project.user.email %></h4>
 
 
@@ -30,5 +89,4 @@
 <% end  %>
 
 
-<%= cl_image_tag @project.photo, height: 300, width: 400, crop: :fill %>
 

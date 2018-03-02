@@ -1,18 +1,53 @@
-<div class="home-title">
-<h1>Welcome to UNICORNZ</h1>
+
+
+<div class="intro-header" style ="background-image:url('https://picsum.photos/1200/800/?random/?gravity=center/')">
+  <div class="overlay">
+    <div class="container-front-image">
+      <div class="row">
+        <div class="col-lg-12">
+          <% unless user_signed_in? %>
+          <div class="home-title">
+            <h1>Welcome to UNICORNZ</h1>
+            <h3>Where you can give and take</h3>
+          </div>
+
+          <% else user_signed_in?  %>
+          <div class="container-front-search">
+            <form action="/search" method="get">
+              <input type="text" name="query" class = "search-box-home">
+              <button type="submit" class = "search-home-button" >
+                <i class="fas fa-search"></i>
+              </button>
+            </form>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="container">
   <div class="row">
+    <h4>Featured Projects</h4>
     <% @projects.each do |project| %>
-    <div class="col-xs-12 col-sm-4 grow">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= project.photo.file.nil? ? 'https://source.unsplash.com/random' : cl_image_path(project.photo, height: 300, width: 400, crop: :fill) %>)">
-        <div class="card-category">Popular</div>
-        <div class="card-description">
-          <h2><%= project.name %></h2>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card">
+        <a class="cover-link" href="/"></a>
+        <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= project.photo.file.nil? ? 'https://source.unsplash.com/random' : cl_image_path(project.photo, height: 300, width: 400, crop: :fill) %>)">
+          <% unless current_user == project.user %>
+          <%= link_to(new_project_donation_path(project)) do %>
+          <button type="button" class="btn btn-donate grow"> Donate
+          </button>
+          <% end %>
+          <% end %>
         </div>
-        <div class="fa-buttons">
-          <%= link_to '<i class="fas fas-clickable fa-trash hvr-grow-rotate"></i>'.html_safe, project, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <div class="card-content">
+          <p class="content-project"> <%= project.name.capitalize %></p>
+          <div class="card-container">
+            <p class="content-category"><%= project.focus_area.name %></p>
+            <p class="content-ngo-name">NGO</p>
+          </div>
         </div>
         <%= link_to(project) do %>
         <div class="card-link"></div>
@@ -22,3 +57,4 @@
     <% end %>
   </div>
 </div>
+

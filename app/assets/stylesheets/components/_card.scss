@@ -1,41 +1,70 @@
 .card {
-  height: 175px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  background-size: cover !important;
-  background-position: center;
-  color: white;
-  position: relative;
-  margin: 10px 0px;
+    background-color: white;
+    border-radius: 3px;
+    flex: 0 0 32%;
+    margin: 0px 2% 30px 0;
+    position: relative;
+    color: #294652;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    transition: all 0.5s;
 }
 
-.card-user {
+.cover-link {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.card-image {
+    height: 200px;
+    width: 100%;
+    background-size: cover;
+}
+
+.card-container {
+display: flex;
+justify-content: space-between
+}
+
+.card-content {
+    padding: 2px 2px;
+    // justify-content: space-between;
+    align-items: center;
+    // background-color-opacity: 0.8;
+
+    .content-ngo-name {
+      font-size: 10px;
+      padding-right: 10px;
+    }
+    .content-project {
+      padding-left: 10px;
+    }
+    .content-category {
+      font-size: 10px;
+      padding-left: 10px;
+    }
+}
+
+.btn-donate {
   position: absolute;
-  right: 10px;
-  top: 10px;
-  width: 40px;
-  border-radius: 50%;
-}
-.card-category {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  font-size: 15px;
-  text-transform: uppercase;
-}
-.card-description {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-}
-.card-description h2 {
-  font-size: 24px;
-}
-.card-description p {
+    top: 18px;
+    right: 18px;
+  background-color: $purple;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
   font-size: 14px;
-  opacity: 0.7;
-  font-weight: lighter;
+  color: white;
+  text-decoration: none;
+  z-index: 4;
 }
-.card-link {
+
+.btn-donate:hover {
+    opacity: 0.9;
+    color: white;
+  }
+
+  .card-link {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -44,26 +73,6 @@
   z-index: 2;
   background: black;
   opacity: 0;
-}
-.card-link:hover {
-  opacity: 0.1;
-}
-
-.fa-buttons {
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
-  z-index: 3;
-}
-
-.fas-clickable {
-  opacity: 0.5;
-  color: black;
-}
-
-.fas-clickable:hover {
-  opacity: 1;
-  color: white;
 }
 
 .grow { transition: all .2s ease-in-out; }
